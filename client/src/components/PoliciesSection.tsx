@@ -89,7 +89,7 @@ export default function PoliciesSection() {
         </motion.div>
 
         {/* Accordion */}
-        <div className="space-y-3">
+        <div className="space-y-4 sm:space-y-6">
           {content.policies.items.slice(1).map((item, index) => {
             const realIndex = index + 1;
             const isOpen = openIndex === realIndex;
@@ -143,7 +143,7 @@ export default function PoliciesSection() {
                       transition={{ duration: 0.3, ease: 'easeInOut' }}
                       style={{ overflow: 'hidden' }}
                     >
-                      <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-0 pl-[60px]">
+                      <div className="px-5 sm:px-6 pb-6 sm:pb-7 pt-1 pl-[60px]">
                         <p className="text-sm text-[#7a7a7a] leading-relaxed">{item.content}</p>
                       </div>
                     </motion.div>
