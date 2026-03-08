@@ -62,31 +62,29 @@ export default function StudioSection() {
   return (
     <section id="estudio" className="py-24 sm:py-28" style={{ background: '#0f1113' }}>
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
-        {/* Header */}
+        {/* Header — big bicolor title, left aligned */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14 sm:mb-16"
+          transition={{ duration: 0.7 }}
+          className="mb-12"
         >
-          <p className="text-xs uppercase tracking-[0.3em] text-[#bfa15a] mb-3 font-medium">
-            Nuestro Espacio
-          </p>
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: 'Playfair Display, serif', color: '#f0ede8' }}
+            className="font-black leading-none tracking-tight"
+            style={{
+              fontFamily: 'Playfair Display, serif',
+              fontSize: 'clamp(2.2rem, 8vw, 4rem)',
+            }}
           >
-            {content.studio_photos.title}
+            <span style={{ color: '#f0ede8' }}>EL </span>
+            <span style={{ color: '#bfa15a' }}>ESTUDIO</span>
           </h2>
-          <div className="section-divider mb-4" />
-          <div className="flex items-center justify-center gap-2 text-sm text-[#6a6a6a]">
-            <MapPin size={14} className="text-[#bfa15a]" />
+          <div className="w-14 h-0.5 mt-4 mb-5" style={{ background: '#bfa15a' }} />
+          <div className="flex items-center gap-2 text-sm" style={{ color: '#6a6a6a' }}>
+            <MapPin size={14} style={{ color: '#bfa15a', flexShrink: 0 }} />
             <span>{content.studio_photos.subtitle}</span>
           </div>
-          <p className="text-sm text-[#5a5a5a] mt-2 max-w-md mx-auto">
-            {content.studio_photos.description}
-          </p>
         </motion.div>
 
         {/* Photos Grid */}

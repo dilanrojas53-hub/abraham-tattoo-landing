@@ -42,18 +42,25 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16 sm:h-18">
-            {/* Logo */}
+            {/* Logo + Name */}
             <a
               href="#inicio"
               onClick={(e) => { e.preventDefault(); handleNavClick('#inicio'); }}
-              className="flex items-center gap-2 flex-shrink-0"
+              className="flex items-center gap-3 flex-shrink-0"
             >
               <img
                 src={content.hero.logoUrl}
                 alt={content.hero.logoAlt}
-              className="h-10 sm:h-12 w-auto object-contain"
-              style={{ filter: 'drop-shadow(0 0 8px rgba(191,161,90,0.3))', maxWidth: '120px' }}
+                className="h-9 sm:h-11 w-auto object-contain flex-shrink-0"
+                style={{ filter: 'drop-shadow(0 0 8px rgba(191,161,90,0.3))', maxWidth: '44px' }}
               />
+              <span
+                className="hidden sm:block text-sm font-bold tracking-widest uppercase"
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
+                <span style={{ color: '#f0ede8' }}>ABRAHAM </span>
+                <span style={{ color: '#bfa15a' }}>TATTOO</span>
+              </span>
             </a>
 
             {/* Desktop Navigation */}

@@ -1,8 +1,8 @@
 /*
  * HeroSection - Abraham Tattoo CR
- * Design: Dark minimal, no giant background image
- * Subtle noise texture, centered logo, gold CTA
- * Mobile-first: feels like a native app
+ * Design: Full-screen background image (tattoo art), dark overlay
+ * Big bold bicolor title (white + gold), two CTAs
+ * Inspired by Jason OS Tattoo — premium, breathing, mobile-first
  */
 
 import { motion } from 'framer-motion';
@@ -14,120 +14,134 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
+// Best tattoo image from portfolio for hero background
+const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256589_c419ade8.jpg";
+
 export default function HeroSection() {
-  const whatsappUrl = `${content.studio.whatsappLink}`;
+  const whatsappUrl = content.studio.whatsappLink;
 
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden texture-overlay"
-      style={{ background: 'linear-gradient(180deg, #0b0b0b 0%, #0f1113 60%, #0b0b0b 100%)' }}
+      className="relative min-h-screen flex flex-col justify-end overflow-hidden"
     >
-      {/* Ambient gold glow */}
+      {/* Background image */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${HERO_BG})` }}
+      />
+
+      {/* Dark overlay — heavier at bottom for text legibility */}
+      <div
+        className="absolute inset-0"
         style={{
-          background: 'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(191,161,90,0.06) 0%, transparent 70%)',
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0.97) 100%)',
         }}
       />
 
-      {/* Decorative lines */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(191,161,90,0.3)] to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[rgba(191,161,90,0.15)] to-transparent" />
-
-      <div className="relative z-10 flex flex-col items-center text-center px-6 py-24 sm:py-32 max-w-2xl mx-auto w-full">
-        {/* Logo */}
+      {/* Content — bottom-aligned like Jason OS */}
+      <div className="relative z-10 px-6 sm:px-10 pb-16 sm:pb-20 pt-32 max-w-2xl w-full">
+        {/* Gold divider line */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-8 sm:mb-10"
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+          className="w-16 h-0.5 mb-6 origin-left"
+          style={{ background: '#bfa15a' }}
+        />
+
+        {/* Big title — two lines, bicolor */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
         >
-          <img
-            src={content.hero.logoUrl}
-            alt={content.hero.logoAlt}
-            className="w-52 sm:w-64 md:w-80 h-auto object-contain mx-auto"
+          <h1
+            className="font-black leading-none tracking-tight mb-2"
             style={{
-              filter: 'drop-shadow(0 0 40px rgba(191,161,90,0.35)) drop-shadow(0 0 80px rgba(191,161,90,0.15))',
-              maxHeight: '280px',
+              fontFamily: 'Playfair Display, serif',
+              fontSize: 'clamp(2.8rem, 12vw, 5.5rem)',
             }}
-          />
+          >
+            <span style={{ color: '#f0ede8' }}>ABRAHAM</span>
+          </h1>
+          <h1
+            className="font-black leading-none tracking-tight mb-6"
+            style={{
+              fontFamily: 'Playfair Display, serif',
+              fontSize: 'clamp(2.8rem, 12vw, 5.5rem)',
+              color: '#bfa15a',
+            }}
+          >
+            TATTOO CR
+          </h1>
         </motion.div>
 
-        {/* Studio name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-          className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3"
-          style={{ fontFamily: 'Playfair Display, serif', color: '#f0ede8' }}
-        >
-          {content.studio.name}
-        </motion.h1>
-
-        {/* Tagline with gold dots */}
-        <motion.div
+        {/* Tagline */}
+        <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.35, ease: 'easeOut' }}
-          className="flex items-center gap-3 mb-3"
+          transition={{ duration: 0.6, delay: 0.55, ease: 'easeOut' }}
+          className="text-sm sm:text-base font-medium tracking-[0.2em] uppercase mb-10"
+          style={{ color: 'rgba(240,237,232,0.7)', letterSpacing: '0.18em' }}
         >
-          <div className="w-8 h-px bg-[#bfa15a] opacity-60" />
-          <p className="text-sm sm:text-base font-medium tracking-[0.25em] uppercase text-[#bfa15a]">
-            {content.studio.tagline}
-          </p>
-          <div className="w-8 h-px bg-[#bfa15a] opacity-60" />
-        </motion.div>
-
-        {/* Location */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-sm text-[#6a6a6a] tracking-wide mb-10 sm:mb-12"
-        >
-          {content.studio.location}
+          BLACK & GREY · FULL COLOR
         </motion.p>
 
-        {/* CTA Button */}
+        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6, ease: 'easeOut' }}
-          className="w-full max-w-xs sm:max-w-sm"
+          transition={{ duration: 0.6, delay: 0.7, ease: 'easeOut' }}
+          className="flex flex-col gap-4 max-w-sm"
         >
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-gold flex items-center justify-center gap-3 w-full py-4 sm:py-5 rounded-xl text-sm sm:text-base font-semibold uppercase tracking-widest shadow-lg"
-            style={{ minHeight: '56px' }}
+            className="btn-gold flex items-center justify-center gap-3 w-full py-4 sm:py-5 rounded-none text-sm sm:text-base font-bold uppercase tracking-widest shadow-xl"
+            style={{ minHeight: '58px' }}
           >
             <WhatsAppIcon />
-            {content.hero.ctaText}
+            COTIZAR AHORA
           </a>
-          <p className="text-xs text-[#555] mt-3 tracking-wide">
-            {content.hero.ctaSubtext}
-          </p>
-        </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-            className="flex flex-col items-center gap-1"
+          <a
+            href="#portafolio"
+            className="flex items-center justify-center w-full py-4 sm:py-5 rounded-none text-sm sm:text-base font-bold uppercase tracking-widest transition-all duration-200"
+            style={{
+              border: '1px solid rgba(191,161,90,0.6)',
+              color: '#f0ede8',
+              background: 'transparent',
+              minHeight: '58px',
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(191,161,90,0.1)';
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLAnchorElement).style.background = 'transparent';
+            }}
           >
-            <div className="w-px h-8 bg-gradient-to-b from-[#bfa15a] to-transparent" />
-            <div className="w-1 h-1 rounded-full bg-[#bfa15a]" />
-          </motion.div>
+            VER GALERÍA
+          </a>
         </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.4, duration: 0.8 }}
+        className="absolute bottom-6 right-6 z-10"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          className="flex flex-col items-center gap-1"
+        >
+          <div className="w-px h-10 bg-gradient-to-b from-[#bfa15a] to-transparent" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

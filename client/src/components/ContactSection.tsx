@@ -1,8 +1,7 @@
 /*
  * ContactSection - Abraham Tattoo CR
- * Design: Dark, Google Maps embed, large CTA buttons
- * Social links: WhatsApp, Email, Instagram, Facebook
- * Schedule table with gold highlights
+ * Design: Big bicolor title, spacious layout, map + contact info
+ * Inspired by Jason OS Tattoo footer/contact — clean, premium
  */
 
 import { motion } from 'framer-motion';
@@ -17,74 +16,64 @@ const WhatsAppIcon = ({ size = 20 }: { size?: number }) => (
 
 export default function ContactSection() {
   return (
-    <section id="contacto" className="py-24 sm:py-28" style={{ background: '#0f1113' }}>
-      <div className="max-w-6xl mx-auto px-6 sm:px-8">
-        {/* Header */}
+    <section id="contacto" className="py-24 sm:py-32" style={{ background: '#0b0b0b' }}>
+      <div className="max-w-6xl mx-auto px-6 sm:px-10">
+
+        {/* Big bicolor title — left aligned */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14 sm:mb-16"
+          transition={{ duration: 0.7 }}
+          className="mb-12"
         >
-          <p className="text-xs uppercase tracking-[0.3em] text-[#bfa15a] mb-3 font-medium">
-            Hablemos
-          </p>
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: 'Playfair Display, serif', color: '#f0ede8' }}
+            className="font-black leading-none tracking-tight"
+            style={{
+              fontFamily: 'Playfair Display, serif',
+              fontSize: 'clamp(2.2rem, 8vw, 4rem)',
+            }}
           >
-            Contacto
+            <span style={{ color: '#f0ede8' }}>UBICACIÓN </span>
+            <span style={{ color: '#bfa15a' }}>&amp; CONTACTO</span>
           </h2>
-          <div className="section-divider mb-4" />
-          <p className="text-sm sm:text-base text-[#6a6a6a]">
-            Estamos listos para hacer realidad tu próximo tatuaje
+          <div className="w-14 h-0.5 mt-4 mb-6" style={{ background: '#bfa15a' }} />
+          <p className="text-[#6a6a6a]" style={{ fontSize: '1rem', lineHeight: 1.7 }}>
+            Estamos listos para hacer realidad tu próximo tatuaje.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
-          {/* Left: Contact buttons + Schedule */}
-          <div className="space-y-8">
-            {/* Main WhatsApp CTA */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <a
-                href={content.studio.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-gold flex items-center justify-center gap-3 w-full py-5 rounded-2xl text-base font-semibold uppercase tracking-widest shadow-xl"
-                style={{ minHeight: '64px' }}
-              >
-                <WhatsAppIcon size={22} />
-                Cotizar por WhatsApp
-              </a>
-            </motion.div>
+        {/* Main WhatsApp CTA — full width */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-10"
+        >
+          <a
+            href={content.studio.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gold flex items-center justify-center gap-3 w-full py-5 text-base font-bold uppercase tracking-widest shadow-xl"
+            style={{ minHeight: '64px' }}
+          >
+            <WhatsAppIcon size={22} />
+            COTIZAR POR WHATSAPP
+          </a>
+        </motion.div>
 
+        {/* Two-column layout: info + map */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+
+          {/* Left: info */}
+          <div className="flex flex-col gap-6">
             {/* Secondary contact buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-4">
               {[
-                {
-                  href: `mailto:${content.studio.email}`,
-                  icon: <Mail size={18} />,
-                  label: 'Email',
-                  sublabel: 'Escríbenos',
-                },
-                {
-                  href: content.studio.instagram,
-                  icon: <Instagram size={18} />,
-                  label: 'Instagram',
-                  sublabel: content.studio.instagramHandle,
-                },
-                {
-                  href: content.studio.facebook,
-                  icon: <Facebook size={18} />,
-                  label: 'Facebook',
-                  sublabel: 'Síguenos',
-                },
+                { href: `mailto:${content.studio.email}`, icon: <Mail size={20} />, label: 'Email' },
+                { href: content.studio.instagram, icon: <Instagram size={20} />, label: 'Instagram' },
+                { href: content.studio.facebook, icon: <Facebook size={20} />, label: 'Facebook' },
               ].map((btn, i) => (
                 <motion.a
                   key={btn.label}
@@ -95,14 +84,17 @@ export default function ContactSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="flex flex-col items-center gap-2 py-5 px-4 rounded-xl border border-[rgba(191,161,90,0.25)] text-[#bfa15a] hover:bg-[rgba(191,161,90,0.08)] hover:border-[rgba(191,161,90,0.5)] transition-all duration-200 group"
-                  style={{ background: 'rgba(255,255,255,0.02)' }}
+                  className="flex flex-col items-center gap-2 py-6 px-3 transition-all duration-200"
+                  style={{
+                    border: '1px solid rgba(191,161,90,0.25)',
+                    background: 'rgba(255,255,255,0.02)',
+                    color: '#bfa15a',
+                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(191,161,90,0.08)'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.02)'; }}
                 >
-                  <div className="group-hover:scale-110 transition-transform duration-200">
-                    {btn.icon}
-                  </div>
-                  <span className="text-xs font-semibold uppercase tracking-widest">{btn.label}</span>
-                  <span className="text-[10px] text-[#5a5a5a] text-center leading-tight">{btn.sublabel}</span>
+                  {btn.icon}
+                  <span className="text-xs font-bold uppercase tracking-widest">{btn.label}</span>
                 </motion.a>
               ))}
             </div>
@@ -112,31 +104,30 @@ export default function ContactSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="rounded-2xl overflow-hidden gold-border-glow"
-              style={{ background: 'rgba(255,255,255,0.02)' }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              style={{
+                background: 'rgba(255,255,255,0.025)',
+                border: '1px solid rgba(191,161,90,0.15)',
+              }}
             >
-              <div className="flex items-center gap-3 px-6 py-5 border-b border-[rgba(191,161,90,0.15)]">
-                <Clock size={16} className="text-[#bfa15a]" />
+              <div className="flex items-center gap-3 px-7 py-5" style={{ borderBottom: '1px solid rgba(191,161,90,0.12)' }}>
+                <Clock size={16} style={{ color: '#bfa15a' }} />
                 <h3
-                  className="text-base font-semibold text-[#f0ede8]"
-                  style={{ fontFamily: 'Playfair Display, serif' }}
+                  className="text-base font-bold"
+                  style={{ fontFamily: 'Playfair Display, serif', color: '#f0ede8' }}
                 >
                   {content.schedule.title}
                 </h3>
               </div>
-              <div className="px-6 py-4">
+              <div className="px-7 py-4">
                 {content.schedule.days.map((day) => (
                   <div
                     key={day.day}
-                    className="flex items-center justify-between py-2 border-b border-[rgba(255,255,255,0.04)] last:border-0"
+                    className="flex items-center justify-between py-3"
+                    style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}
                   >
-                    <span className={`text-sm ${day.open ? 'text-[#c0c0c0]' : 'text-[#4a4a4a]'}`}>
-                      {day.day}
-                    </span>
-                    <span className={`text-sm font-medium ${day.open ? 'text-[#bfa15a]' : 'text-[#4a4a4a]'}`}>
-                      {day.hours}
-                    </span>
+                    <span className="text-sm" style={{ color: day.open ? '#c0c0c0' : '#4a4a4a' }}>{day.day}</span>
+                    <span className="text-sm font-semibold" style={{ color: day.open ? '#bfa15a' : '#4a4a4a' }}>{day.hours}</span>
                   </div>
                 ))}
               </div>
@@ -147,20 +138,24 @@ export default function ContactSection() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex items-start gap-3 px-4 py-3 rounded-xl"
-              style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="flex items-start gap-4 p-6"
+              style={{
+                background: 'rgba(255,255,255,0.02)',
+                border: '1px solid rgba(255,255,255,0.06)',
+              }}
             >
-              <MapPin size={16} className="text-[#bfa15a] mt-0.5 flex-shrink-0" />
+              <MapPin size={18} style={{ color: '#bfa15a', marginTop: '2px', flexShrink: 0 }} />
               <div>
-                <p className="text-sm text-[#c0c0c0]">{content.studio.address}</p>
+                <p className="text-sm text-[#c0c0c0] leading-relaxed">{content.studio.address}</p>
                 <a
                   href={content.studio.googleMapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-[#bfa15a] hover:text-[#d4b96a] transition-colors mt-1 inline-block"
+                  className="text-xs font-medium mt-2 inline-block transition-colors"
+                  style={{ color: '#bfa15a' }}
                 >
-                  Ver en Google Maps →
+                  Abrir en Google Maps →
                 </a>
               </div>
             </motion.div>
@@ -172,18 +167,21 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="rounded-2xl overflow-hidden gold-border-glow"
-            style={{ minHeight: '360px' }}
+            className="overflow-hidden"
+            style={{
+              border: '1px solid rgba(191,161,90,0.2)',
+              minHeight: '400px',
+            }}
           >
             <iframe
               src={content.studio.googleMapsEmbed}
               width="100%"
               height="100%"
-              style={{ border: 0, minHeight: '360px', filter: 'grayscale(30%) contrast(1.1)' }}
+              style={{ border: 0, minHeight: '400px', display: 'block', filter: 'grayscale(20%) contrast(1.05)' }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Ubicación Abraham Tattoo CR"
+              title="Ubicación Silent Noir Ink - Abraham Tattoo CR"
             />
           </motion.div>
         </div>

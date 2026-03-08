@@ -1,11 +1,9 @@
 /*
  * Footer - Abraham Tattoo CR
- * Design: Dark minimal footer with gold accents
- * Includes: schedule summary, address, social links, copyright
- * Digital Atlas "Powered By" attribution with adaptive logo
+ * Design: Clean dark footer, logo + name centered, schedule, address, social icons
+ * Inspired by Jason OS Tattoo footer — minimal, spacious, premium
  */
 
-import { motion } from 'framer-motion';
 import { MapPin, Clock, Instagram, Facebook, Mail } from 'lucide-react';
 import content from '../content.json';
 
@@ -20,155 +18,134 @@ export default function Footer() {
   const closedDays = content.schedule.days.filter(d => !d.open);
 
   return (
-    <footer style={{ background: '#080808', borderTop: '1px solid rgba(191,161,90,0.15)' }}>
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 py-14 sm:py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Brand column */}
-          <div className="lg:col-span-1">
-            <img
-              src={content.hero.logoUrl}
-              alt={content.hero.logoAlt}
-              className="h-14 w-auto object-contain mb-4"
-              style={{ filter: 'drop-shadow(0 0 10px rgba(191,161,90,0.2))' }}
-            />
-            <p className="text-xs text-[#5a5a5a] leading-relaxed mb-4">
-              Arte permanente de calidad premium en Naranjo, Alajuela, Costa Rica.
-            </p>
-            <p className="text-xs text-[#bfa15a] tracking-[0.15em] uppercase font-medium">
-              {content.studio.tagline}
-            </p>
-          </div>
+    <footer style={{ background: '#080808', borderTop: '1px solid rgba(191,161,90,0.12)' }}>
+      <div className="max-w-4xl mx-auto px-6 sm:px-10 py-16 sm:py-20 text-center">
 
-          {/* Schedule column */}
+        {/* Logo + Name */}
+        <div className="flex flex-col items-center mb-8">
+          <img
+            src={content.hero.logoUrl}
+            alt={content.hero.logoAlt}
+            className="h-16 w-auto object-contain mb-4"
+            style={{ filter: 'drop-shadow(0 0 12px rgba(191,161,90,0.25))' }}
+          />
+          <h3
+            className="text-xl font-bold tracking-widest uppercase mb-1"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            <span style={{ color: '#f0ede8' }}>ABRAHAM </span>
+            <span style={{ color: '#bfa15a' }}>TATTOO CR</span>
+          </h3>
+          <p className="text-xs text-[#5a5a5a] tracking-[0.2em] uppercase">
+            {content.studio.tagline}
+          </p>
+        </div>
+
+        {/* Bio */}
+        <p className="text-sm text-[#5a5a5a] leading-relaxed mb-10 max-w-sm mx-auto">
+          Arte permanente de calidad premium en Naranjo, Alajuela, Costa Rica.
+        </p>
+
+        {/* Divider */}
+        <div className="w-12 h-px mx-auto mb-10" style={{ background: 'rgba(191,161,90,0.3)' }} />
+
+        {/* Location & Schedule */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10 text-left max-w-lg mx-auto">
+          {/* Schedule */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Clock size={14} className="text-[#bfa15a]" />
-              <h4 className="text-xs uppercase tracking-[0.2em] text-[#bfa15a] font-semibold">
-                Horario
-              </h4>
+              <Clock size={13} style={{ color: '#bfa15a' }} />
+              <span className="text-xs uppercase tracking-[0.2em] font-bold" style={{ color: '#bfa15a' }}>Horario</span>
             </div>
-            <div className="space-y-1.5">
+            <div className="space-y-2">
               {openDays.map(d => (
                 <div key={d.day} className="flex justify-between text-xs">
-                  <span className="text-[#7a7a7a]">{d.day}</span>
-                  <span className="text-[#bfa15a]">{d.hours}</span>
+                  <span style={{ color: '#7a7a7a' }}>{d.day}</span>
+                  <span style={{ color: '#bfa15a' }}>{d.hours}</span>
                 </div>
               ))}
-              <div className="flex justify-between text-xs pt-1 border-t border-[rgba(255,255,255,0.05)]">
-                <span className="text-[#4a4a4a]">
-                  {closedDays.map(d => d.day).join(', ')}
-                </span>
-                <span className="text-[#4a4a4a]">Cerrado</span>
+              <div className="flex justify-between text-xs pt-2" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                <span style={{ color: '#3a3a3a' }}>{closedDays.map(d => d.day).join(', ')}</span>
+                <span style={{ color: '#3a3a3a' }}>Cerrado</span>
               </div>
             </div>
           </div>
 
-          {/* Location column */}
+          {/* Address */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <MapPin size={14} className="text-[#bfa15a]" />
-              <h4 className="text-xs uppercase tracking-[0.2em] text-[#bfa15a] font-semibold">
-                Ubicación
-              </h4>
+              <MapPin size={13} style={{ color: '#bfa15a' }} />
+              <span className="text-xs uppercase tracking-[0.2em] font-bold" style={{ color: '#bfa15a' }}>Ubicación</span>
             </div>
-            <p className="text-xs text-[#7a7a7a] leading-relaxed mb-3">
+            <p className="text-xs leading-relaxed mb-3" style={{ color: '#7a7a7a' }}>
               {content.studio.address}
             </p>
             <a
               href={content.studio.googleMapsLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-[#bfa15a] hover:text-[#d4b96a] transition-colors"
+              className="text-xs transition-colors"
+              style={{ color: '#bfa15a' }}
             >
               Ver en Google Maps →
             </a>
           </div>
-
-          {/* Social column */}
-          <div>
-            <h4 className="text-xs uppercase tracking-[0.2em] text-[#bfa15a] font-semibold mb-4">
-              Redes Sociales
-            </h4>
-            <div className="space-y-3">
-              <a
-                href={content.studio.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-xs text-[#7a7a7a] hover:text-[#bfa15a] transition-colors group"
-              >
-                <div className="w-7 h-7 rounded-lg bg-[rgba(191,161,90,0.08)] border border-[rgba(191,161,90,0.2)] flex items-center justify-center group-hover:bg-[rgba(191,161,90,0.15)] transition-all">
-                  <WhatsAppIcon />
-                </div>
-                WhatsApp
-              </a>
-              <a
-                href={content.studio.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-xs text-[#7a7a7a] hover:text-[#bfa15a] transition-colors group"
-              >
-                <div className="w-7 h-7 rounded-lg bg-[rgba(191,161,90,0.08)] border border-[rgba(191,161,90,0.2)] flex items-center justify-center group-hover:bg-[rgba(191,161,90,0.15)] transition-all">
-                  <Instagram size={13} />
-                </div>
-                {content.studio.instagramHandle}
-              </a>
-              <a
-                href={content.studio.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-xs text-[#7a7a7a] hover:text-[#bfa15a] transition-colors group"
-              >
-                <div className="w-7 h-7 rounded-lg bg-[rgba(191,161,90,0.08)] border border-[rgba(191,161,90,0.2)] flex items-center justify-center group-hover:bg-[rgba(191,161,90,0.15)] transition-all">
-                  <Facebook size={13} />
-                </div>
-                Facebook
-              </a>
-              <a
-                href={`mailto:${content.studio.email}`}
-                className="flex items-center gap-3 text-xs text-[#7a7a7a] hover:text-[#bfa15a] transition-colors group"
-              >
-                <div className="w-7 h-7 rounded-lg bg-[rgba(191,161,90,0.08)] border border-[rgba(191,161,90,0.2)] flex items-center justify-center group-hover:bg-[rgba(191,161,90,0.15)] transition-all">
-                  <Mail size={13} />
-                </div>
-                Email
-              </a>
-            </div>
-          </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-[rgba(255,255,255,0.06)] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-[#4a4a4a] text-center sm:text-left">
+        {/* Social icons */}
+        <div className="flex items-center justify-center gap-4 mb-12">
+          {[
+            { href: content.studio.whatsappLink, icon: <WhatsAppIcon />, label: 'WhatsApp' },
+            { href: content.studio.instagram, icon: <Instagram size={15} />, label: 'Instagram' },
+            { href: content.studio.facebook, icon: <Facebook size={15} />, label: 'Facebook' },
+            { href: `mailto:${content.studio.email}`, icon: <Mail size={15} />, label: 'Email' },
+          ].map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target={s.href.startsWith('mailto') ? undefined : '_blank'}
+              rel="noopener noreferrer"
+              aria-label={s.label}
+              className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200"
+              style={{
+                border: '1px solid rgba(191,161,90,0.25)',
+                background: 'rgba(191,161,90,0.05)',
+                color: '#bfa15a',
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(191,161,90,0.15)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(191,161,90,0.05)'; }}
+            >
+              {s.icon}
+            </a>
+          ))}
+        </div>
+
+        {/* Bottom */}
+        <div className="flex flex-col items-center gap-4" style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '2rem' }}>
+          <p className="text-xs" style={{ color: '#3a3a3a' }}>
             {content.footer.copyright}
           </p>
 
-          {/* Digital Atlas Powered By */}
-          <motion.a
+          {/* Digital Atlas */}
+          <a
             href={content.footer.poweredByUrl}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ opacity: 0.85 }}
             className="flex items-center gap-2 group"
           >
-            <span className="text-[10px] text-[#3a3a3a] uppercase tracking-[0.2em] group-hover:text-[#5a5a5a] transition-colors">
+            <span className="text-[10px] uppercase tracking-[0.2em] transition-colors" style={{ color: '#3a3a3a' }}>
               Powered by
             </span>
             <img
               src={content.footer.poweredByLogoUrl}
               alt="Digital Atlas"
               className="h-5 w-auto object-contain"
-              style={{
-                filter: 'brightness(0) invert(0.55)',
-                transition: 'filter 0.2s ease',
-              }}
-              onMouseEnter={(e) => {
-                (e.target as HTMLImageElement).style.filter = 'brightness(0) invert(0.8)';
-              }}
-              onMouseLeave={(e) => {
-                (e.target as HTMLImageElement).style.filter = 'brightness(0) invert(0.55)';
-              }}
+              style={{ filter: 'brightness(0) invert(0.4)', transition: 'filter 0.2s ease' }}
+              onMouseEnter={e => { (e.target as HTMLImageElement).style.filter = 'brightness(0) invert(0.7)'; }}
+              onMouseLeave={e => { (e.target as HTMLImageElement).style.filter = 'brightness(0) invert(0.4)'; }}
             />
-          </motion.a>
+            <span className="text-xs font-semibold transition-colors" style={{ color: '#3a3a3a' }}>Digital Atlas</span>
+          </a>
         </div>
       </div>
     </footer>

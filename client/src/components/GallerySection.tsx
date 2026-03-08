@@ -118,25 +118,26 @@ export default function GallerySection() {
   return (
     <section id="portafolio" className="py-24 sm:py-28" style={{ background: '#0b0b0b' }}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        {/* Section header */}
+        {/* Section header — big bicolor, left aligned */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14 sm:mb-18"
+          transition={{ duration: 0.7 }}
+          className="mb-12"
         >
-          <p className="text-xs uppercase tracking-[0.3em] text-[#bfa15a] mb-3 font-medium">
-            Trabajo Real
-          </p>
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: 'Playfair Display, serif', color: '#f0ede8' }}
+            className="font-black leading-none tracking-tight"
+            style={{
+              fontFamily: 'Playfair Display, serif',
+              fontSize: 'clamp(2.2rem, 8vw, 4rem)',
+            }}
           >
-            {content.portfolio.title}
+            <span style={{ color: '#f0ede8' }}>PORTAFOLIO </span>
+            <span style={{ color: '#bfa15a' }}>REAL</span>
           </h2>
-          <div className="section-divider mb-4" />
-          <p className="text-sm sm:text-base text-[#6a6a6a] max-w-md mx-auto">
+          <div className="w-14 h-0.5 mt-4 mb-5" style={{ background: '#bfa15a' }} />
+          <p className="text-[#6a6a6a]" style={{ fontSize: '1rem', lineHeight: 1.7 }}>
             {content.portfolio.subtitle}
           </p>
         </motion.div>

@@ -1,7 +1,7 @@
 /*
  * StatsSection - Abraham Tattoo CR
- * Design: Dark card with gold accents, animated counter
- * Social proof + 3 guarantee bullets with gold icons
+ * Design: Big left-aligned bicolor title, spacious dark cards
+ * Inspired by Jason OS Tattoo — breathing, premium, bold
  */
 
 import { useEffect, useRef, useState } from 'react';
@@ -10,9 +10,9 @@ import { Shield, Sparkles, Award } from 'lucide-react';
 import content from '../content.json';
 
 const iconMap: Record<string, React.ReactNode> = {
-  shield: <Shield size={22} className="text-gold" style={{ color: '#bfa15a' }} />,
-  sparkles: <Sparkles size={22} style={{ color: '#bfa15a' }} />,
-  award: <Award size={22} style={{ color: '#bfa15a' }} />,
+  shield: <Shield size={24} style={{ color: '#bfa15a' }} />,
+  sparkles: <Sparkles size={24} style={{ color: '#bfa15a' }} />,
+  award: <Award size={24} style={{ color: '#bfa15a' }} />,
 };
 
 function AnimatedCounter({ target, duration = 2000 }: { target: number; duration?: number }) {
@@ -26,25 +26,14 @@ function AnimatedCounter({ target, duration = 2000 }: { target: number; duration
     const step = target / (duration / 16);
     const timer = setInterval(() => {
       start += step;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
+      if (start >= target) { setCount(target); clearInterval(timer); }
+      else setCount(Math.floor(start));
     }, 16);
     return () => clearInterval(timer);
   }, [inView, target, duration]);
 
   return <span ref={ref}>{count}</span>;
 }
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15 },
-  },
-};
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -56,59 +45,92 @@ export default function StatsSection() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="py-24 sm:py-28" style={{ background: '#0f1113' }}>
-      <div className="max-w-5xl mx-auto px-6 sm:px-8">
-        {/* Counter */}
+    <section className="py-24 sm:py-32" style={{ background: '#0f1113' }}>
+      <div className="max-w-5xl mx-auto px-6 sm:px-10" ref={ref}>
+
+        {/* Section title — big, left-aligned, bicolor */}
         <motion.div
-          ref={ref}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] as [number,number,number,number] }}
-          className="text-center mb-14 sm:mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7 }}
+          className="mb-4"
         >
-          <div
-            className="inline-flex flex-col items-center gap-2 px-10 py-8 rounded-2xl gold-border-glow"
-            style={{ background: 'rgba(191,161,90,0.04)' }}
+          <h2
+            className="font-black leading-none tracking-tight"
+            style={{
+              fontFamily: 'Playfair Display, serif',
+              fontSize: 'clamp(2.2rem, 8vw, 4rem)',
+            }}
           >
-            <p className="text-5xl sm:text-6xl md:text-7xl font-bold gold-gradient-text" style={{ fontFamily: 'Playfair Display, serif' }}>
-              +<AnimatedCounter target={500} />
-            </p>
-            <p className="text-sm sm:text-base text-[#8a8a8a] uppercase tracking-[0.2em] font-medium">
-              {content.stats.tattoosLabel}
-            </p>
-          </div>
+            <span style={{ color: '#f0ede8' }}>GARANTÍA &amp; </span>
+            <span style={{ color: '#bfa15a' }}>CALIDAD</span>
+          </h2>
+          {/* Gold underline */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={inView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
+            className="w-16 h-0.5 mt-4 mb-12 origin-left"
+            style={{ background: '#bfa15a' }}
+          />
         </motion.div>
 
-        {/* Guarantees */}
+        {/* Counter — prominent */}
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="mb-14"
         >
-          {content.stats.guarantees.map((item) => (
+          <p
+            className="font-black leading-none"
+            style={{
+              fontFamily: 'Playfair Display, serif',
+              fontSize: 'clamp(4rem, 18vw, 8rem)',
+              color: '#bfa15a',
+              lineHeight: 1,
+            }}
+          >
+            +<AnimatedCounter target={500} />
+          </p>
+          <p className="text-base sm:text-lg text-[#8a8a8a] uppercase tracking-[0.25em] font-medium mt-2">
+            {content.stats.tattoosLabel}
+          </p>
+        </motion.div>
+
+        {/* Guarantees — full-width cards stacked on mobile, row on desktop */}
+        <div className="flex flex-col gap-6">
+          {content.stats.guarantees.map((item, i) => (
             <motion.div
               key={item.title}
               variants={itemVariants}
-              className="flex flex-col items-center text-center p-8 rounded-xl gold-border-glow transition-all duration-300 hover:bg-[rgba(191,161,90,0.04)]"
-              style={{ background: 'rgba(255,255,255,0.02)' }}
+              initial="hidden"
+              animate={inView ? 'visible' : 'hidden'}
+              transition={{ delay: 0.2 + i * 0.12 }}
+              className="flex items-start gap-5 p-7 sm:p-8"
+              style={{
+                background: 'rgba(255,255,255,0.025)',
+                border: '1px solid rgba(191,161,90,0.15)',
+              }}
             >
               <div
-                className="w-12 h-12 rounded-full flex items-center justify-center mb-4"
-                style={{ background: 'rgba(191,161,90,0.1)', border: '1px solid rgba(191,161,90,0.25)' }}
+                className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                style={{ background: 'rgba(191,161,90,0.12)', border: '1px solid rgba(191,161,90,0.3)' }}
               >
                 {iconMap[item.icon]}
               </div>
-              <h3
-                className="text-base font-semibold mb-2"
-                style={{ fontFamily: 'Playfair Display, serif', color: '#f0ede8' }}
-              >
-                {item.title}
-              </h3>
-              <p className="text-sm text-[#7a7a7a] leading-relaxed">{item.description}</p>
+              <div>
+                <h3
+                  className="text-lg font-bold mb-1"
+                  style={{ fontFamily: 'Playfair Display, serif', color: '#f0ede8' }}
+                >
+                  {item.title}
+                </h3>
+                <p className="text-sm sm:text-base text-[#7a7a7a] leading-relaxed">{item.description}</p>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
