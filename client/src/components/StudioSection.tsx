@@ -60,15 +60,15 @@ export default function StudioSection() {
   const [selectedPhoto, setSelectedPhoto] = useState<typeof content.studio_photos.photos[0] | null>(null);
 
   return (
-    <section id="estudio" className="py-16 sm:py-20" style={{ background: '#0f1113' }}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="estudio" className="py-24 sm:py-28" style={{ background: '#0f1113' }}>
+      <div className="max-w-6xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 sm:mb-14"
+          className="text-center mb-14 sm:mb-16"
         >
           <p className="text-xs uppercase tracking-[0.3em] text-[#bfa15a] mb-3 font-medium">
             Nuestro Espacio
@@ -90,7 +90,7 @@ export default function StudioSection() {
         </motion.div>
 
         {/* Photos Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {content.studio_photos.photos.map((photo, index) => (
             <motion.div
               key={index}
@@ -132,7 +132,7 @@ export default function StudioSection() {
           className="text-center mt-10"
         >
           <a
-            href="https://maps.app.goo.gl/NaranjoCoproo"
+            href={content.studio.googleMapsLink}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[rgba(191,161,90,0.4)] text-[#bfa15a] text-sm font-medium hover:bg-[rgba(191,161,90,0.08)] transition-all duration-200 tracking-wide"

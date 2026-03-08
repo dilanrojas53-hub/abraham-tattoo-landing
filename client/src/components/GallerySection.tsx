@@ -116,15 +116,15 @@ export default function GallerySection() {
   }, [images.length]);
 
   return (
-    <section id="portafolio" className="py-16 sm:py-20" style={{ background: '#0b0b0b' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section id="portafolio" className="py-24 sm:py-28" style={{ background: '#0b0b0b' }}>
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 sm:mb-14"
+          className="text-center mb-14 sm:mb-18"
         >
           <p className="text-xs uppercase tracking-[0.3em] text-[#bfa15a] mb-3 font-medium">
             Trabajo Real

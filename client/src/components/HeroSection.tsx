@@ -46,10 +46,10 @@ export default function HeroSection() {
           <img
             src={content.hero.logoUrl}
             alt={content.hero.logoAlt}
-            className="w-44 sm:w-56 md:w-72 h-auto object-contain mx-auto"
+            className="w-52 sm:w-64 md:w-80 h-auto object-contain mx-auto"
             style={{
-              filter: 'drop-shadow(0 0 30px rgba(191,161,90,0.3)) drop-shadow(0 0 80px rgba(191,161,90,0.12))',
-              maxHeight: '220px',
+              filter: 'drop-shadow(0 0 40px rgba(191,161,90,0.35)) drop-shadow(0 0 80px rgba(191,161,90,0.15))',
+              maxHeight: '280px',
             }}
           />
         </motion.div>

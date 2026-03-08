@@ -21,8 +21,8 @@ export default function Footer() {
 
   return (
     <footer style={{ background: '#080808', borderTop: '1px solid rgba(191,161,90,0.15)' }}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 py-14 sm:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand column */}
           <div className="lg:col-span-1">
             <img
@@ -75,7 +75,7 @@ export default function Footer() {
               {content.studio.address}
             </p>
             <a
-              href="https://maps.app.goo.gl/NaranjoCoproo"
+              href={content.studio.googleMapsLink}
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-[#bfa15a] hover:text-[#d4b96a] transition-colors"

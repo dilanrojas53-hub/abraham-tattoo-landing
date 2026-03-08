@@ -17,15 +17,15 @@ const WhatsAppIcon = ({ size = 20 }: { size?: number }) => (
 
 export default function ContactSection() {
   return (
-    <section id="contacto" className="py-16 sm:py-20" style={{ background: '#0f1113' }}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="contacto" className="py-24 sm:py-28" style={{ background: '#0f1113' }}>
+      <div className="max-w-6xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 sm:mb-14"
+          className="text-center mb-14 sm:mb-16"
         >
           <p className="text-xs uppercase tracking-[0.3em] text-[#bfa15a] mb-3 font-medium">
             Hablemos
@@ -42,9 +42,9 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
           {/* Left: Contact buttons + Schedule */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             {/* Main WhatsApp CTA */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -65,7 +65,7 @@ export default function ContactSection() {
             </motion.div>
 
             {/* Secondary contact buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
                 {
                   href: `mailto:${content.studio.email}`,
@@ -95,7 +95,7 @@ export default function ContactSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.08 }}
-                  className="flex flex-col items-center gap-2 py-4 px-3 rounded-xl border border-[rgba(191,161,90,0.25)] text-[#bfa15a] hover:bg-[rgba(191,161,90,0.08)] hover:border-[rgba(191,161,90,0.5)] transition-all duration-200 group"
+                  className="flex flex-col items-center gap-2 py-5 px-4 rounded-xl border border-[rgba(191,161,90,0.25)] text-[#bfa15a] hover:bg-[rgba(191,161,90,0.08)] hover:border-[rgba(191,161,90,0.5)] transition-all duration-200 group"
                   style={{ background: 'rgba(255,255,255,0.02)' }}
                 >
                   <div className="group-hover:scale-110 transition-transform duration-200">
@@ -116,16 +116,16 @@ export default function ContactSection() {
               className="rounded-2xl overflow-hidden gold-border-glow"
               style={{ background: 'rgba(255,255,255,0.02)' }}
             >
-              <div className="flex items-center gap-3 px-5 py-4 border-b border-[rgba(191,161,90,0.15)]">
+              <div className="flex items-center gap-3 px-6 py-5 border-b border-[rgba(191,161,90,0.15)]">
                 <Clock size={16} className="text-[#bfa15a]" />
                 <h3
-                  className="text-sm font-semibold text-[#f0ede8]"
+                  className="text-base font-semibold text-[#f0ede8]"
                   style={{ fontFamily: 'Playfair Display, serif' }}
                 >
                   {content.schedule.title}
                 </h3>
               </div>
-              <div className="px-5 py-3">
+              <div className="px-6 py-4">
                 {content.schedule.days.map((day) => (
                   <div
                     key={day.day}
@@ -155,7 +155,7 @@ export default function ContactSection() {
               <div>
                 <p className="text-sm text-[#c0c0c0]">{content.studio.address}</p>
                 <a
-                  href="https://maps.app.goo.gl/NaranjoCoproo"
+                  href={content.studio.googleMapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs text-[#bfa15a] hover:text-[#d4b96a] transition-colors mt-1 inline-block"
@@ -176,7 +176,7 @@ export default function ContactSection() {
             style={{ minHeight: '360px' }}
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.4!2d-84.3768!3d10.1027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f9b8c3b5e5d5%3A0x1234567890abcdef!2sFerretera%20Coproo%2C%20Naranjo%2C%20Alajuela!5e0!3m2!1ses!2scr!4v1234567890"
+              src={content.studio.googleMapsEmbed}
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: '360px', filter: 'grayscale(30%) contrast(1.1)' }}

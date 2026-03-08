@@ -9,8 +9,8 @@ import content from '../content.json';
 
 export default function ArtistSection() {
   return (
-    <section className="py-16 sm:py-20 overflow-hidden" style={{ background: '#0b0b0b' }}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section className="py-24 sm:py-28 overflow-hidden" style={{ background: '#0b0b0b' }}>
+      <div className="max-w-6xl mx-auto px-6 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Artist photo */}
           <motion.div

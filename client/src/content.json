@@ -12,11 +12,11 @@
     "instagram": "https://www.instagram.com/joseabraham.tattoo",
     "instagramHandle": "@joseabraham.tattoo",
     "facebook": "https://www.facebook.com/profile.php?id=100087291851099",
-    "googleMapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.4!2d-84.3768!3d10.1027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDA2JzA5LjciTiA4NMKwMjInMzYuNSJX!5e0!3m2!1ses!2scr!4v1234567890",
-    "googleMapsLink": "https://maps.app.goo.gl/NaranjoCoproo"
+    "googleMapsEmbed": "https://maps.google.com/maps?q=Ferreteria+Coproo,+Naranjo,+Alajuela,+Costa+Rica&t=&z=16&ie=UTF8&iwloc=&output=embed",
+    "googleMapsLink": "https://www.google.com/maps/search/?api=1&query=Ferreteria+Coproo,+Naranjo,+Alajuela"
   },
   "hero": {
-    "logoUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256612_5946eed5.png",
+    "logoUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/logo_transparent_v2_ab9efbdd.png",
     "logoAlt": "Abraham Tattoo CR Logo",
     "ctaText": "Cotizar por WhatsApp",
     "ctaSubtext": "Respuesta rápida · Sin compromiso"

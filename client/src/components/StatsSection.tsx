@@ -56,8 +56,8 @@ export default function StatsSection() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section className="py-16 sm:py-20" style={{ background: '#0f1113' }}>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+    <section className="py-24 sm:py-28" style={{ background: '#0f1113' }}>
+      <div className="max-w-5xl mx-auto px-6 sm:px-8">
         {/* Counter */}
         <motion.div
           ref={ref}
@@ -84,13 +84,13 @@ export default function StatsSection() {
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8"
         >
           {content.stats.guarantees.map((item) => (
             <motion.div
               key={item.title}
               variants={itemVariants}
-              className="flex flex-col items-center text-center p-6 rounded-xl gold-border-glow transition-all duration-300 hover:bg-[rgba(191,161,90,0.04)]"
+              className="flex flex-col items-center text-center p-8 rounded-xl gold-border-glow transition-all duration-300 hover:bg-[rgba(191,161,90,0.04)]"
               style={{ background: 'rgba(255,255,255,0.02)' }}
             >
               <div

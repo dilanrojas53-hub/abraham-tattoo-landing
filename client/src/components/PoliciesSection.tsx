@@ -25,15 +25,15 @@ export default function PoliciesSection() {
   };
 
   return (
-    <section id="info" className="py-16 sm:py-20" style={{ background: '#0b0b0b' }}>
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+    <section id="info" className="py-24 sm:py-28" style={{ background: '#0b0b0b' }}>
+      <div className="max-w-3xl mx-auto px-6 sm:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 sm:mb-14"
+          className="text-center mb-14 sm:mb-16"
         >
           <p className="text-xs uppercase tracking-[0.3em] text-[#bfa15a] mb-3 font-medium">
             Transparencia Total
@@ -56,7 +56,7 @@ export default function PoliciesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-6 p-5 sm:p-6 rounded-2xl"
+          className="mb-8 p-6 sm:p-8 rounded-2xl"
           style={{
             background: 'linear-gradient(135deg, rgba(191,161,90,0.12) 0%, rgba(191,161,90,0.05) 100%)',
             border: '1px solid rgba(191,161,90,0.35)',
@@ -89,7 +89,7 @@ export default function PoliciesSection() {
         </motion.div>
 
         {/* Accordion */}
-        <div className="space-y-2">
+        <div className="space-y-3">
           {content.policies.items.slice(1).map((item, index) => {
             const realIndex = index + 1;
             const isOpen = openIndex === realIndex;
