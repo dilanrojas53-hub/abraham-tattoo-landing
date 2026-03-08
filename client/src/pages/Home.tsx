@@ -1,25 +1,35 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
-
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+/*
+ * Home.tsx - Abraham Tattoo CR Landing Page
+ * Design System: Dark Luxury / Neo-Gothic Premium
+ * Palette: #0b0b0b bg, #bfa15a gold accents
+ * Typography: Playfair Display + Inter
+ * All sections assembled here
  */
-export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
 
+import Header from '../components/Header';
+import HeroSection from '../components/HeroSection';
+import StatsSection from '../components/StatsSection';
+import ArtistSection from '../components/ArtistSection';
+import GallerySection from '../components/GallerySection';
+import StudioSection from '../components/StudioSection';
+import PoliciesSection from '../components/PoliciesSection';
+import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer';
+
+export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen" style={{ background: '#0b0b0b', color: '#f0ede8' }}>
+      <Header />
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <HeroSection />
+        <StatsSection />
+        <ArtistSection />
+        <GallerySection />
+        <StudioSection />
+        <PoliciesSection />
+        <ContactSection />
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,214 @@
+{
+  "studio": {
+    "name": "Abraham Tattoo CR",
+    "artist": "Abraham Espinoza",
+    "tagline": "Black & Grey • Full Color",
+    "subtitle": "Arte permanente con precisión y pasión",
+    "location": "Naranjo, Alajuela, Costa Rica",
+    "address": "Ferretería Coproo, Naranjo, Alajuela",
+    "whatsappLink": "https://wa.me/message/OHS5TDMALN3WE1",
+    "whatsappMessage": "Hola Abraham, me gustaría cotizar un tatuaje.",
+    "email": "joseabrahamespinozagarcia51@gmail.com",
+    "instagram": "https://www.instagram.com/joseabraham.tattoo",
+    "instagramHandle": "@joseabraham.tattoo",
+    "facebook": "https://www.facebook.com/profile.php?id=100087291851099",
+    "googleMapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.4!2d-84.3768!3d10.1027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDA2JzA5LjciTiA4NMKwMjInMzYuNSJX!5e0!3m2!1ses!2scr!4v1234567890",
+    "googleMapsLink": "https://maps.app.goo.gl/NaranjoCoproo"
+  },
+  "hero": {
+    "logoUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256612_5946eed5.png",
+    "logoAlt": "Abraham Tattoo CR Logo",
+    "ctaText": "Cotizar por WhatsApp",
+    "ctaSubtext": "Respuesta rápida · Sin compromiso"
+  },
+  "stats": {
+    "tattoosCount": "+500",
+    "tattoosLabel": "Tatuajes Realizados",
+    "guarantees": [
+      {
+        "icon": "shield",
+        "title": "Pigmentos Certificados",
+        "description": "Tintas de grado médico, hipoalergénicas y de larga duración"
+      },
+      {
+        "icon": "sparkles",
+        "title": "Esterilización Hospitalaria",
+        "description": "Equipos autoclave y materiales desechables en cada sesión"
+      },
+      {
+        "icon": "award",
+        "title": "Garantía de por Vida",
+        "description": "Retoques incluidos si el tatuaje lo necesita con el tiempo"
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Portafolio",
+    "subtitle": "Cada pieza es única, diseñada especialmente para ti",
+    "images": [
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256589_c419ade8.jpg",
+        "alt": "Tatuaje Samurai Hannya con flores de cerezo - Full Color",
+        "category": "Full Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256588_5f206be5.jpg",
+        "alt": "Tatuaje Hannya Mask con flores - Full Color",
+        "category": "Full Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256587_e4965a52.jpg",
+        "alt": "Tatuaje Courage the Cowardly Dog - Cartoon",
+        "category": "Full Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256590_fd20e0fe.jpg",
+        "alt": "Tatuaje artístico - Black & Grey",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256591_5cb158b6.jpg",
+        "alt": "Tatuaje detallado - Black & Grey",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256594_4ff67433.jpg",
+        "alt": "Tatuaje artístico premium",
+        "category": "Full Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256595_7923cf94.jpg",
+        "alt": "Tatuaje detallado premium",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256596_19236469.jpg",
+        "alt": "Tatuaje artístico",
+        "category": "Full Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256597_bd26f8b0.jpg",
+        "alt": "Tatuaje premium Black & Grey",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256598_76cf8678.jpg",
+        "alt": "Tatuaje artístico detallado",
+        "category": "Full Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256599_e23bf15b.jpg",
+        "alt": "Tatuaje premium",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256600_50896530.jpg",
+        "alt": "Tatuaje artístico",
+        "category": "Full Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256602_bbdc6692.jpg",
+        "alt": "Tatuaje Black & Grey",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256603_bfe51d2d.jpg",
+        "alt": "Tatuaje detallado",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256604_d92b21bb.jpg",
+        "alt": "Tatuaje artístico premium",
+        "category": "Full Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256605_255148db.jpg",
+        "alt": "Tatuaje Black & Grey detallado",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256606_bf98bb4f.jpg",
+        "alt": "Tatuaje artístico",
+        "category": "Full Color"
+      }
+    ]
+  },
+  "studio_photos": {
+    "title": "El Estudio",
+    "subtitle": "Ferretería Coproo, Naranjo",
+    "description": "Un espacio diseñado para tu comodidad y seguridad. Ambiente premium, higiene hospitalaria.",
+    "photos": [
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256614_184fc878.png",
+        "alt": "Exterior del estudio Abraham Tattoo CR",
+        "label": "Exterior"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256613_f6e2b97b.png",
+        "alt": "Interior del estudio Abraham Tattoo CR",
+        "label": "Interior"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256610_6a30a5dc.png",
+        "alt": "El artista Abraham trabajando",
+        "label": "El Artista"
+      }
+    ]
+  },
+  "policies": {
+    "title": "Reservas y Políticas",
+    "subtitle": "Transparencia total para tu tranquilidad",
+    "items": [
+      {
+        "title": "Reserva tu Cita",
+        "icon": "calendar",
+        "content": "Para apartar tu cita se requiere un adelanto de ₡30.000 (deducibles del total). Este monto garantiza tu espacio en la agenda del artista."
+      },
+      {
+        "title": "Métodos de Pago",
+        "icon": "credit-card",
+        "content": "Aceptamos SINPE Móvil, depósito bancario y efectivo. El adelanto se realiza al confirmar la cita."
+      },
+      {
+        "title": "Política de Cancelación",
+        "icon": "info",
+        "content": "El adelanto no es reembolsable, pero sí es reprogramable con aviso previo de al menos 24 horas. Sin aviso, se pierde el adelanto."
+      },
+      {
+        "title": "Diseño Personalizado",
+        "icon": "pen-tool",
+        "content": "El diseño de tu tatuaje se entrega 1 día antes de la sesión para que puedas revisarlo con calma y solicitar ajustes."
+      },
+      {
+        "title": "Cuidado Post-Tatuaje",
+        "icon": "heart",
+        "content": "Recibirás instrucciones detalladas de cuidado. Incluye garantía de retoque si el tatuaje lo necesita después de sanar."
+      }
+    ]
+  },
+  "schedule": {
+    "title": "Horario de Atención",
+    "days": [
+      { "day": "Lunes", "hours": "9:00 am – 7:00 pm", "open": true },
+      { "day": "Martes", "hours": "Cerrado", "open": false },
+      { "day": "Miércoles", "hours": "Cerrado", "open": false },
+      { "day": "Jueves", "hours": "9:00 am – 7:00 pm", "open": true },
+      { "day": "Viernes", "hours": "9:00 am – 7:00 pm", "open": true },
+      { "day": "Sábado", "hours": "9:00 am – 7:00 pm", "open": true },
+      { "day": "Domingo", "hours": "Cerrado", "open": false }
+    ]
+  },
+  "nav": [
+    { "label": "Inicio", "href": "#inicio" },
+    { "label": "Portafolio", "href": "#portafolio" },
+    { "label": "Estudio", "href": "#estudio" },
+    { "label": "Info", "href": "#info" },
+    { "label": "Contacto", "href": "#contacto" }
+  ],
+  "footer": {
+    "copyright": "© 2025 Abraham Tattoo CR. Todos los derechos reservados.",
+    "poweredBy": "Powered by Digital Atlas",
+    "poweredByUrl": "https://digitalatlas.cr",
+    "poweredByLogoUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/P62ThS0ZQ7Kl6uZ2fiBhlQ_b3e34a7d.webp"
+  }
+}

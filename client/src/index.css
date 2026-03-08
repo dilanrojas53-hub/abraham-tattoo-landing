@@ -1,13 +1,32 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/*
+ * DESIGN SYSTEM: Abraham Tattoo CR
+ * Movement: Dark Luxury / Neo-Gothic Premium
+ * Palette: Near-black backgrounds (#0b0b0b, #0f1113), Gold accents (#bfa15a, #d4b96a)
+ * Typography: Playfair Display (titles) + Inter (body)
+ * Philosophy: Elegance through restraint — every element earns its place
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --color-gold: oklch(0.72 0.08 75);
+  --color-gold-light: oklch(0.80 0.09 75);
+  --color-gold-dark: oklch(0.58 0.07 75);
+  --color-bg-primary: oklch(0.10 0.005 240);
+  --color-bg-secondary: oklch(0.13 0.005 240);
+  --color-bg-card: oklch(0.15 0.005 240);
+  --color-text-primary: oklch(0.95 0 0);
+  --color-text-secondary: oklch(0.65 0.005 240);
+  --color-border: oklch(0.22 0.005 240);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -27,151 +46,208 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --radius: 0.5rem;
+  --background: oklch(0.10 0.005 240);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.13 0.005 240);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.13 0.005 240);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.72 0.08 75);
+  --primary-foreground: oklch(0.10 0.005 240);
+  --secondary: oklch(0.18 0.005 240);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.18 0.005 240);
+  --muted-foreground: oklch(0.65 0.005 240);
+  --accent: oklch(0.72 0.08 75);
+  --accent-foreground: oklch(0.10 0.005 240);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.95 0 0);
+  --border: oklch(0.22 0.005 240);
+  --input: oklch(0.18 0.005 240);
+  --ring: oklch(0.72 0.08 75);
 }
 
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  button:not(:disabled),
-  [role="button"]:not([aria-disabled="true"]),
-  [type="button"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
-  a[href],
-  select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
-    @apply cursor-pointer;
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #0b0b0b;
+  color: #f0ede8;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+
+/* Gold accent color utilities */
+.text-gold { color: #bfa15a; }
+.text-gold-light { color: #d4b96a; }
+.bg-gold { background-color: #bfa15a; }
+.border-gold { border-color: #bfa15a; }
+.border-gold-dim { border-color: rgba(191, 161, 90, 0.3); }
+
+/* Subtle noise texture overlay */
+.texture-overlay {
+  position: relative;
+}
+.texture-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gold gradient text */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #bfa15a 0%, #d4b96a 50%, #9a7d3a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold shimmer button */
+.btn-gold {
+  background: linear-gradient(135deg, #bfa15a 0%, #d4b96a 50%, #bfa15a 100%);
+  background-size: 200% 200%;
+  color: #0b0b0b;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold:hover {
+  background-position: right center;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(191, 161, 90, 0.35);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+/* Gold border glow */
+.gold-border-glow {
+  border: 1px solid rgba(191, 161, 90, 0.4);
+  box-shadow: 0 0 20px rgba(191, 161, 90, 0.08);
+}
+
+/* Masonry grid */
+.masonry-grid {
+  column-count: 2;
+  column-gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    column-count: 3;
+    column-gap: 12px;
   }
 }
 
-@layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
-  .container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 4;
+    column-gap: 12px;
   }
+}
 
-  .flex {
-    min-height: 0;
-    min-width: 0;
-  }
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 8px;
+  display: block;
+}
 
-  @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
+@media (min-width: 768px) {
+  .masonry-item {
+    margin-bottom: 12px;
   }
+}
 
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0b0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #bfa15a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4b96a;
+}
+
+/* Section divider */
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #bfa15a, transparent);
+  margin: 0 auto;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
   }
+}
+
+/* Smooth image loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+/* Gold line decoration */
+.gold-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.gold-line::before,
+.gold-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #bfa15a);
+}
+.gold-line::after {
+  background: linear-gradient(90deg, #bfa15a, transparent);
 }
