@@ -11,6 +11,7 @@ import HeroSection from '../components/HeroSection';
 import StatsSection from '../components/StatsSection';
 import ArtistSection from '../components/ArtistSection';
 import GallerySection from '../components/GallerySection';
+import BeforeAfterSection from '../components/BeforeAfterSection';
 import StudioSection from '../components/StudioSection';
 import PoliciesSection from '../components/PoliciesSection';
 import ContactSection from '../components/ContactSection';
@@ -25,6 +26,7 @@ export default function Home() {
         <StatsSection />
         <ArtistSection />
         <GallerySection />
+        <BeforeAfterSection />
         <StudioSection />
         <PoliciesSection />
         <ContactSection />

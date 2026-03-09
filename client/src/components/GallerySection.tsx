@@ -1,25 +1,28 @@
 /*
  * GallerySection - Abraham Tattoo CR
- * Design: Masonry grid, gold hover effects, lightbox
+ * Design: Masonry grid con filtros pills, gold hover effects, lightbox
+ * Filtros: Todos | Ilustrativo a Color | Black & Grey | Covers | Detalles Pequeños
  * Mobile: 2 columns, Desktop: 3-4 columns
- * Lightbox: full screen with navigation
+ * Lightbox: full screen con navegación y categoría
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import content from '../content.json';
 
+type GalleryItem = (typeof content.portfolio.images)[number];
+
 interface LightboxProps {
-  images: typeof content.portfolio.images;
+  items: GalleryItem[];
   currentIndex: number;
   onClose: () => void;
   onPrev: () => void;
   onNext: () => void;
 }
 
-function Lightbox({ images, currentIndex, onClose, onPrev, onNext }: LightboxProps) {
-  const image = images[currentIndex];
+function Lightbox({ items, currentIndex, onClose, onPrev, onNext }: LightboxProps) {
+  const item = items[currentIndex];
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -45,9 +48,9 @@ function Lightbox({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
         className="lightbox-overlay"
         onClick={onClose}
       >
-        {/* Close button */}
+        {/* Close */}
         <button
-          className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[rgba(0,0,0,0.6)] border border-[rgba(191,161,90,0.3)] text-[#bfa15a] hover:bg-[rgba(191,161,90,0.15)] transition-all"
+          className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-[rgba(0,0,0,0.7)] border border-[rgba(191,161,90,0.4)] text-[#bfa15a] hover:bg-[rgba(191,161,90,0.15)] transition-all"
           onClick={onClose}
         >
           <X size={18} />
@@ -55,12 +58,12 @@ function Lightbox({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
 
         {/* Counter */}
         <div className="absolute top-4 left-1/2 -translate-x-1/2 text-xs text-[#8a8a8a] tracking-widest">
-          {currentIndex + 1} / {images.length}
+          {currentIndex + 1} / {items.length}
         </div>
 
-        {/* Prev button */}
+        {/* Prev */}
         <button
-          className="absolute left-3 sm:left-6 z-10 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[rgba(0,0,0,0.6)] border border-[rgba(191,161,90,0.3)] text-[#bfa15a] hover:bg-[rgba(191,161,90,0.15)] transition-all"
+          className="absolute left-3 sm:left-6 z-10 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[rgba(0,0,0,0.7)] border border-[rgba(191,161,90,0.3)] text-[#bfa15a] hover:bg-[rgba(191,161,90,0.15)] transition-all"
           onClick={(e) => { e.stopPropagation(); onPrev(); }}
         >
           <ChevronLeft size={20} />
@@ -69,23 +72,23 @@ function Lightbox({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
         {/* Image */}
         <motion.div
           key={currentIndex}
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.3 }}
           className="max-w-[90vw] max-h-[85vh] flex items-center justify-center"
           onClick={(e) => e.stopPropagation()}
         >
           <img
-            src={image.url}
-            alt={image.alt}
+            src={item.url}
+            alt={item.alt}
             className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
-            style={{ boxShadow: '0 0 60px rgba(0,0,0,0.8), 0 0 30px rgba(191,161,90,0.1)' }}
+            style={{ boxShadow: '0 0 60px rgba(0,0,0,0.9), 0 0 30px rgba(191,161,90,0.08)' }}
           />
         </motion.div>
 
-        {/* Next button */}
+        {/* Next */}
         <button
-          className="absolute right-3 sm:right-6 z-10 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[rgba(0,0,0,0.6)] border border-[rgba(191,161,90,0.3)] text-[#bfa15a] hover:bg-[rgba(191,161,90,0.15)] transition-all"
+          className="absolute right-3 sm:right-6 z-10 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-[rgba(0,0,0,0.7)] border border-[rgba(191,161,90,0.3)] text-[#bfa15a] hover:bg-[rgba(191,161,90,0.15)] transition-all"
           onClick={(e) => { e.stopPropagation(); onNext(); }}
         >
           <ChevronRight size={20} />
@@ -93,8 +96,8 @@ function Lightbox({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
 
         {/* Category badge */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-          <span className="px-3 py-1 text-xs rounded-full border border-[rgba(191,161,90,0.4)] text-[#bfa15a] bg-[rgba(0,0,0,0.6)] tracking-widest uppercase">
-            {image.category}
+          <span className="px-4 py-1.5 text-xs rounded-full border border-[rgba(191,161,90,0.5)] text-[#bfa15a] bg-[rgba(0,0,0,0.7)] tracking-widest uppercase font-medium">
+            {item.category}
           </span>
         </div>
       </motion.div>
@@ -102,29 +105,44 @@ function Lightbox({ images, currentIndex, onClose, onPrev, onNext }: LightboxPro
   );
 }
 
+const FILTERS = ['Todos', 'Ilustrativo a Color', 'Black & Grey', 'Covers', 'Detalles Pequeños'];
+
 export default function GallerySection() {
+  const [activeFilter, setActiveFilter] = useState('Todos');
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const images = content.portfolio.images;
+  const filterBarRef = useRef<HTMLDivElement>(null);
+
+  const allImages = content.portfolio.images;
+
+  const filteredImages = activeFilter === 'Todos'
+    ? allImages
+    : allImages.filter((img) => img.category === activeFilter);
 
   const openLightbox = useCallback((index: number) => setLightboxIndex(index), []);
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
   const prevImage = useCallback(() => {
-    setLightboxIndex((i) => (i !== null ? (i - 1 + images.length) % images.length : null));
-  }, [images.length]);
+    setLightboxIndex((i) => (i !== null ? (i - 1 + filteredImages.length) % filteredImages.length : null));
+  }, [filteredImages.length]);
   const nextImage = useCallback(() => {
-    setLightboxIndex((i) => (i !== null ? (i + 1) % images.length : null));
-  }, [images.length]);
+    setLightboxIndex((i) => (i !== null ? (i + 1) % filteredImages.length : null));
+  }, [filteredImages.length]);
+
+  // Reset lightbox when filter changes
+  useEffect(() => {
+    setLightboxIndex(null);
+  }, [activeFilter]);
 
   return (
     <section id="portafolio" className="py-24 sm:py-28" style={{ background: '#0b0b0b' }}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        {/* Section header — big bicolor, left aligned */}
+
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7 }}
-          className="mb-12"
+          className="mb-10"
         >
           <h2
             className="font-black leading-none tracking-tight"
@@ -142,38 +160,102 @@ export default function GallerySection() {
           </p>
         </motion.div>
 
-        {/* Masonry Grid */}
-        <div className="masonry-grid">
-          {images.map((image, index) => (
-            <motion.div
-              key={index}
-              className="masonry-item group relative cursor-pointer overflow-hidden rounded-lg"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: (index % 4) * 0.08 }}
-              onClick={() => openLightbox(index)}
-            >
-              <img
-                src={image.url}
-                alt={image.alt}
-                className="w-full h-auto block transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-3">
-                <span className="text-xs text-[#bfa15a] uppercase tracking-widest font-medium">
-                  {image.category}
-                </span>
-                <div className="w-8 h-8 rounded-full bg-[rgba(191,161,90,0.2)] border border-[rgba(191,161,90,0.5)] flex items-center justify-center">
-                  <ZoomIn size={14} className="text-[#bfa15a]" />
+        {/* Filter Pills — horizontal scroll on mobile */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mb-10"
+        >
+          <div
+            ref={filterBarRef}
+            className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {FILTERS.map((filter) => {
+              const isActive = activeFilter === filter;
+              const count = filter === 'Todos'
+                ? allImages.length
+                : allImages.filter((img) => img.category === filter).length;
+              return (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className="relative flex-shrink-0 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-widest transition-all duration-300 focus:outline-none"
+                  style={{
+                    background: isActive ? '#bfa15a' : 'rgba(255,255,255,0.04)',
+                    color: isActive ? '#0b0b0b' : '#8a8a8a',
+                    border: isActive ? '1px solid #bfa15a' : '1px solid rgba(255,255,255,0.08)',
+                    boxShadow: isActive ? '0 0 20px rgba(191,161,90,0.25)' : 'none',
+                  }}
+                >
+                  {filter}
+                  <span
+                    className="ml-2 text-[10px] opacity-70"
+                    style={{ color: isActive ? '#0b0b0b' : '#555' }}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </motion.div>
+
+        {/* Masonry Grid with layout animation */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeFilter}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="masonry-grid"
+          >
+            {filteredImages.map((image, index) => (
+              <motion.div
+                key={image.url}
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{
+                  duration: 0.45,
+                  delay: (index % 6) * 0.06,
+                  layout: { duration: 0.35, ease: 'easeInOut' }
+                }}
+                className="masonry-item group relative cursor-pointer overflow-hidden rounded-lg"
+                onClick={() => openLightbox(index)}
+              >
+                <img
+                  src={image.url}
+                  alt={image.alt}
+                  className="w-full h-auto block transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.75)] via-[rgba(0,0,0,0.1)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-between p-3">
+                  <span className="text-[10px] text-[#bfa15a] uppercase tracking-widest font-semibold leading-tight max-w-[70%]">
+                    {image.category}
+                  </span>
+                  <div className="w-8 h-8 rounded-full bg-[rgba(191,161,90,0.15)] border border-[rgba(191,161,90,0.5)] flex items-center justify-center flex-shrink-0">
+                    <ZoomIn size={13} className="text-[#bfa15a]" />
+                  </div>
                 </div>
-              </div>
-              {/* Gold border on hover */}
-              <div className="absolute inset-0 border border-transparent group-hover:border-[rgba(191,161,90,0.4)] rounded-lg transition-all duration-300 pointer-events-none" />
-            </motion.div>
-          ))}
-        </div>
+                {/* Gold border on hover */}
+                <div className="absolute inset-0 border border-transparent group-hover:border-[rgba(191,161,90,0.35)] rounded-lg transition-all duration-300 pointer-events-none" />
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Empty state */}
+        {filteredImages.length === 0 && (
+          <div className="text-center py-20 text-[#4a4a4a]">
+            <p className="text-sm tracking-widest uppercase">Sin imágenes en esta categoría</p>
+          </div>
+        )}
 
         {/* CTA below gallery */}
         <motion.div
@@ -181,7 +263,7 @@ export default function GallerySection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mt-12 sm:mt-16"
+          className="text-center mt-14 sm:mt-16"
         >
           <p className="text-sm text-[#6a6a6a] mb-5">
             ¿Te gustó lo que ves? Hablemos de tu próximo tatuaje.
@@ -203,7 +285,7 @@ export default function GallerySection() {
       {/* Lightbox */}
       {lightboxIndex !== null && (
         <Lightbox
-          images={images}
+          items={filteredImages}
           currentIndex={lightboxIndex}
           onClose={closeLightbox}
           onPrev={prevImage}

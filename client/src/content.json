@@ -45,91 +45,332 @@
   "portfolio": {
     "title": "Portafolio",
     "subtitle": "Cada pieza es única, diseñada especialmente para ti",
+    "filters": ["Todos", "Ilustrativo a Color", "Black & Grey", "Covers", "Detalles Pequeños"],
     "images": [
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256589_c419ade8.jpg",
-        "alt": "Tatuaje Samurai Hannya con flores de cerezo - Full Color",
-        "category": "Full Color"
+        "alt": "Samurai Hannya con flores de cerezo - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256588_5f206be5.jpg",
-        "alt": "Tatuaje Hannya Mask con flores - Full Color",
-        "category": "Full Color"
+        "alt": "Hannya Mask con flores japonesas - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256587_e4965a52.jpg",
-        "alt": "Tatuaje Courage the Cowardly Dog - Cartoon",
-        "category": "Full Color"
+        "alt": "Courage the Cowardly Dog cartoon - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256590_fd20e0fe.jpg",
-        "alt": "Colibrí con flores moradas - Full Color",
-        "category": "Full Color"
+        "alt": "Colibrí con flores moradas - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256591_5cb158b6.jpg",
-        "alt": "Loro con rana tropical - Full Color",
-        "category": "Full Color"
+        "alt": "Loro tropical con rana - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256594_4ff67433.jpg",
-        "alt": "Tatuaje artístico premium",
-        "category": "Full Color"
+        "alt": "Diseño artístico premium - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256595_7923cf94.jpg",
-        "alt": "Perezoso con mariposas y flores - Full Color",
-        "category": "Full Color"
+        "alt": "Perezoso con mariposas y flores - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256596_19236469.jpg",
-        "alt": "Ojo de dragón realista con iris verde - Full Color",
-        "category": "Full Color"
+        "alt": "Ojo de dragón realista con iris verde - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256597_bd26f8b0.jpg",
-        "alt": "Criatura cartoon con colores vivos - Full Color",
-        "category": "Full Color"
+        "alt": "Criatura cartoon con colores vivos - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256598_76cf8678.jpg",
-        "alt": "Sailor Moon anime con tonos azul y rosa - Full Color",
-        "category": "Full Color"
+        "alt": "Sailor Moon anime con tonos azul y rosa - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256599_e23bf15b.jpg",
-        "alt": "Rana con mariposa azul y flores - Full Color",
-        "category": "Full Color"
+        "alt": "Rana con mariposa azul y flores - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256600_50896530.jpg",
-        "alt": "Maneki Neko gato de la suerte con flores rojas - Full Color",
-        "category": "Full Color"
+        "alt": "Maneki Neko gato de la suerte con flores rojas - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256602_bbdc6692.jpg",
-        "alt": "Mariposa azul y rosa con destellos - Full Color",
-        "category": "Full Color"
+        "alt": "Mariposa azul y rosa con destellos - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256603_bfe51d2d.jpg",
-        "alt": "Carpa koi japonesa en manga - Full Color",
-        "category": "Full Color"
+        "alt": "Carpa koi japonesa en manga - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256604_d92b21bb.jpg",
-        "alt": "Mickey Mouse cartoon con colores vivos - Full Color",
-        "category": "Full Color"
+        "alt": "Mickey Mouse cartoon con colores vivos - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256605_255148db.jpg",
-        "alt": "Mariposas azules 3D realistas - Full Color",
-        "category": "Full Color"
+        "alt": "Mariposas azules 3D realistas - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256606_bf98bb4f.jpg",
-        "alt": "Tres mariposas azules 3D en hombro - Full Color",
-        "category": "Full Color"
+        "alt": "Tres mariposas azules 3D en hombro - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257286_ce069d49.jpg",
+        "alt": "Mariposa colorida con flores - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257287_5d5b9014.jpg",
+        "alt": "Rana tropical colorida - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257290_356d1df5.jpg",
+        "alt": "Flores con color vibrante - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257292_debbfe9a.jpg",
+        "alt": "Flores coloridas en brazo - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257296_63893be6.jpg",
+        "alt": "Flores con color en muñeca - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257297_6793c8c8.jpg",
+        "alt": "Flores coloridas en antebrazo - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257299_5f0511df.jpg",
+        "alt": "Diseño colorido artístico - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257302_690df408.jpg",
+        "alt": "Diseño con color en pierna - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257306_4a7c142c.jpg",
+        "alt": "Flores coloridas grandes - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257308_d17d4f23.jpg",
+        "alt": "Diseño colorido en brazo - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257310_1077a973.jpg",
+        "alt": "Diseño colorido artístico en pierna - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257314_90d51dd1.jpg",
+        "alt": "Diseño colorido en antebrazo - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257316_cec4c107.jpg",
+        "alt": "Diseño colorido pequeño - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257318_3cab4ffe.jpg",
+        "alt": "Flores coloridas en tobillo - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257326_2802b6ed.jpg",
+        "alt": "Flor corazón rosa y azul con nombre Fonseca - Ilustrativo a Color",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257288_e21e5f7d.jpg",
+        "alt": "Retrato realista Black & Grey",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257289_eada30b5.jpg",
+        "alt": "Retrato Black & Grey detallado",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257291_1eec92e1.jpg",
+        "alt": "Mandala Black & Grey en brazo",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257294_b19807f2.jpg",
+        "alt": "Lobo realista Black & Grey",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257295_20b668e0.jpg",
+        "alt": "Retrato Black & Grey en antebrazo",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257300_6fa8192b.jpg",
+        "alt": "Diseño Black & Grey en brazo",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257305_bc461d63.jpg",
+        "alt": "Diseño Black & Grey detallado",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257307_796023f7.jpg",
+        "alt": "Retrato Black & Grey realista en pierna",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257309_732937c7.jpg",
+        "alt": "Diseño Black & Grey en espalda",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257315_8c77d67e.jpg",
+        "alt": "Diseño Black & Grey fino",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257317_c9ddb34b.jpg",
+        "alt": "Diseño Black & Grey en muñeca",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257328_a4a8a0c0.jpg",
+        "alt": "Enredadera Black & Grey en hombro",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257335_bb7b37ac.jpg",
+        "alt": "Cover: Mandala colorido en mano - Después",
+        "category": "Covers"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257334_6b2e064c.jpg",
+        "alt": "Cover: Mandala mano desvanecido - Antes",
+        "category": "Covers"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257338_415cb27f.jpg",
+        "alt": "Cover: Calavera con rosa roja en brazo - Después",
+        "category": "Covers"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257341_33a0497b.jpg",
+        "alt": "Cover: Sistema solar hexagonal en pierna - Después",
+        "category": "Covers"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257339_0ce59bba.jpg",
+        "alt": "Cover: Sistema solar en pierna desvanecido - Antes",
+        "category": "Covers"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257342_454a2eb5.jpg",
+        "alt": "Cover: Sistema solar hexagonal completo - Después",
+        "category": "Covers"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257344_442226ad.jpg",
+        "alt": "Cover: Rosa roja en muñeca - Después",
+        "category": "Covers"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257343_3ace2b7d.jpg",
+        "alt": "Cover: Pájaro con rosa en muñeca desvanecido - Antes",
+        "category": "Covers"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257347_0660b234.jpg",
+        "alt": "Cover: Corazón colorido en tobillo - Después",
+        "category": "Covers"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257346_7cc242f4.jpg",
+        "alt": "Cover: Corazón con color en tobillo - Intermedio",
+        "category": "Covers"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257345_697ba84b.jpg",
+        "alt": "Cover: Corazón pequeño en tobillo - Antes",
+        "category": "Covers"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257293_1ff249c8.jpg",
+        "alt": "Tatuaje pequeño fino en muñeca - Detalles Pequeños",
+        "category": "Detalles Pequeños"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257301_b7835df0.jpg",
+        "alt": "Tatuaje pequeño detallado - Detalles Pequeños",
+        "category": "Detalles Pequeños"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257313_e2ab1271.jpg",
+        "alt": "Tatuaje pequeño fino - Detalles Pequeños",
+        "category": "Detalles Pequeños"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257319_933495b1.jpg",
+        "alt": "Corazones pequeños con rojo - Detalles Pequeños",
+        "category": "Detalles Pequeños"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257320_11500810.jpg",
+        "alt": "Perezoso Pura Vida Black & Grey fino - Detalles Pequeños",
+        "category": "Detalles Pequeños"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257321_ac1283c2.jpg",
+        "alt": "Texto caligráfico fino en antebrazo - Detalles Pequeños",
+        "category": "Detalles Pequeños"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257323_ffb9c863.jpg",
+        "alt": "Cruz pequeña Black & Grey - Detalles Pequeños",
+        "category": "Detalles Pequeños"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257324_6b442ccb.jpg",
+        "alt": "Copa de vino y taza con color rojo - Detalles Pequeños",
+        "category": "Detalles Pequeños"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257325_61225092.jpg",
+        "alt": "Kanji chino con acento rojo - Detalles Pequeños",
+        "category": "Detalles Pequeños"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257332_61294a9a.jpg",
+        "alt": "Sol y luna No Matter Where con texto - Detalles Pequeños",
+        "category": "Detalles Pequeños"
       }
     ]
   },

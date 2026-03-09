@@ -235,6 +235,15 @@ img {
   transition: opacity 0.3s ease;
 }
 
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Gold line decoration */
 .gold-line {
   display: inline-flex;
