@@ -53,11 +53,19 @@ const COVER_PAIRS: CoverPair[] = [
     description: 'De simple a colorido con detalles únicos',
   },
   {
+    before: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258060_2640510e.jpg',
+    after: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258063_e48f07aa.jpg',
+    beforeAlt: 'Nombre escrito en muñeca - Antes del cover',
+    afterAlt: 'Flor mandala full color en muñeca - Después del cover',
+    title: 'Nombre a Flor Mandala',
+    description: 'Cover completo: nombre antiguo transformado en flor mandala a color',
+  },
+  {
     before: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258062_e008e464.jpg',
     after: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258063_e48f07aa.jpg',
     beforeAlt: 'Flor mandala boceto en muñeca - Antes',
     afterAlt: 'Flor mandala full color en muñeca - Después',
-    title: 'Flor Mandala en Muñeca',
+    title: 'Boceto a Color',
     description: 'Boceto transformado en color vibrante',
   },
 ];
