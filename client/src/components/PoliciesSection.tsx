@@ -95,7 +95,7 @@ export default function PoliciesSection() {
                   >
                     {p.label}
                   </span>
-                  <p className="text-[#7a7a7a]" style={{ fontSize: '0.95rem', lineHeight: 1.7 }}>
+                  <p className="text-[#7a7a7a]" style={{ fontSize: '1rem', lineHeight: 1.75 }}>
                     {p.text}
                   </p>
                 </div>

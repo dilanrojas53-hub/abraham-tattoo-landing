@@ -1,7 +1,8 @@
 /*
  * ArtistSection - Abraham Tattoo CR
- * Design: Big bicolor title, spacious layout, numbered steps for booking
- * Premium dark, breathing, mobile-first
+ * Design: Dark Luxury / Neo-Gothic Premium
+ * Rediseño: texto más grande, más espacio, layout asimétrico limpio
+ * Quita sección de pasos (demasiado contenido apilado)
  */
 
 import { motion } from 'framer-motion';
@@ -21,11 +22,11 @@ const STEPS = [
 
 export default function ArtistSection() {
   return (
-    <section className="py-24 sm:py-32 overflow-hidden" style={{ background: '#0b0b0b' }}>
+    <section className="py-20 sm:py-28 overflow-hidden" style={{ background: '#0b0b0b' }}>
       <div className="max-w-6xl mx-auto px-6 sm:px-10">
 
-        {/* Top: Artist bio — asymmetric grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24 sm:mb-32">
+        {/* Artist bio — asymmetric grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20 sm:mb-28">
           {/* Photo */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -44,7 +45,7 @@ export default function ArtistSection() {
                 className="absolute inset-0"
                 style={{ background: 'linear-gradient(to top, rgba(11,11,11,0.9) 0%, rgba(11,11,11,0.1) 60%, transparent 100%)' }}
               />
-              <div className="absolute bottom-0 left-0 right-0 p-7">
+              <div className="absolute bottom-0 left-0 right-0 p-8">
                 <h3 className="text-2xl font-bold text-[#f0ede8] mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
                   {content.studio.artist}
                 </h3>
@@ -69,7 +70,7 @@ export default function ArtistSection() {
               className="font-black leading-none tracking-tight mb-6"
               style={{
                 fontFamily: 'Playfair Display, serif',
-                fontSize: 'clamp(2.2rem, 8vw, 3.8rem)',
+                fontSize: 'clamp(2.4rem, 8vw, 4rem)',
               }}
             >
               <span style={{ color: '#f0ede8' }}>ARTE QUE DURA </span>
@@ -77,7 +78,7 @@ export default function ArtistSection() {
             </h2>
             <div className="w-14 h-0.5 mb-8" style={{ background: '#bfa15a' }} />
 
-            <div className="space-y-5 text-[#7a7a7a] leading-relaxed" style={{ fontSize: '1rem' }}>
+            <div className="space-y-5 leading-relaxed" style={{ fontSize: '1.05rem', color: '#7a7a7a' }}>
               <p>
                 Abraham Espinoza es un artista del tatuaje con más de{' '}
                 <span style={{ color: '#c0c0c0' }}>500 piezas realizadas</span>, especializado en
@@ -95,11 +96,11 @@ export default function ArtistSection() {
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-2 mt-7 mb-8">
+            <div className="flex flex-wrap gap-2 mt-8 mb-10">
               {['Black & Grey', 'Full Color', 'Japonés', 'Cartoon', 'Realismo'].map((tag) => (
                 <span
                   key={tag}
-                  className="px-4 py-1.5 text-xs font-medium tracking-wide"
+                  className="px-4 py-2 text-sm font-medium tracking-wide"
                   style={{
                     border: '1px solid rgba(191,161,90,0.3)',
                     color: '#8a8a8a',
@@ -123,37 +124,41 @@ export default function ArtistSection() {
           </motion.div>
         </div>
 
-        {/* Bottom: How to book — numbered steps */}
+        {/* How to book — numbered steps, horizontal on desktop */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7 }}
         >
-          <h2
-            className="font-black leading-none tracking-tight mb-4"
-            style={{
-              fontFamily: 'Playfair Display, serif',
-              fontSize: 'clamp(2.2rem, 8vw, 4rem)',
-            }}
-          >
-            <span style={{ color: '#f0ede8' }}>AGENDA TU </span>
-            <span style={{ color: '#bfa15a' }}>CITA</span>
-          </h2>
-          <p className="text-[#7a7a7a] mb-10 max-w-xl" style={{ fontSize: '1rem', lineHeight: 1.7 }}>
-            El proceso para agendar tu tatuaje es simple y directo. Me enfoco en darte una
-            atención personalizada para que tu diseño sea único.
-          </p>
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-8 h-0.5" style={{ background: '#bfa15a' }} />
+              <span className="text-xs uppercase tracking-[0.3em] font-semibold" style={{ color: '#bfa15a' }}>
+                Proceso de cita
+              </span>
+            </div>
+            <h2
+              className="font-black leading-none tracking-tight"
+              style={{
+                fontFamily: 'Playfair Display, serif',
+                fontSize: 'clamp(2.4rem, 8vw, 4rem)',
+              }}
+            >
+              <span style={{ color: '#f0ede8' }}>AGENDA TU </span>
+              <span style={{ color: '#bfa15a' }}>CITA</span>
+            </h2>
+          </div>
 
-          <div className="flex flex-col gap-6 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10">
             {STEPS.map((step, i) => (
               <motion.div
                 key={step.num}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex items-start gap-5 p-7"
+                className="flex flex-col gap-4 p-7"
                 style={{
                   background: 'rgba(255,255,255,0.025)',
                   border: '1px solid rgba(191,161,90,0.12)',
@@ -172,12 +177,12 @@ export default function ArtistSection() {
                 </div>
                 <div>
                   <h3
-                    className="text-lg font-bold mb-1"
+                    className="text-lg font-bold mb-2"
                     style={{ fontFamily: 'Playfair Display, serif', color: '#f0ede8' }}
                   >
                     {step.title}
                   </h3>
-                  <p className="text-[#7a7a7a]" style={{ fontSize: '0.95rem', lineHeight: 1.6 }}>
+                  <p style={{ fontSize: '1rem', lineHeight: 1.65, color: '#7a7a7a' }}>
                     {step.desc}
                   </p>
                 </div>
@@ -185,17 +190,19 @@ export default function ArtistSection() {
             ))}
           </div>
 
-          <a
-            href={content.studio.whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-gold flex items-center justify-center gap-3 w-full sm:w-auto sm:inline-flex py-5 px-10 text-sm font-bold uppercase tracking-widest"
-            style={{ minHeight: '60px' }}
-          >
-            <WA_ICON />
-            AGENDAR POR WHATSAPP
-          </a>
-          <p className="text-[#555] text-xs mt-3 tracking-wide">Respuesta usualmente en menos de 24 horas.</p>
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <a
+              href={content.studio.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold inline-flex items-center gap-3 py-4 px-10 text-sm font-bold uppercase tracking-widest"
+              style={{ minHeight: '56px' }}
+            >
+              <WA_ICON />
+              AGENDAR POR WHATSAPP
+            </a>
+            <p className="text-sm" style={{ color: '#555' }}>Respuesta en menos de 24 horas.</p>
+          </div>
         </motion.div>
       </div>
     </section>
