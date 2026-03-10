@@ -71,8 +71,8 @@ export default function Header() {
               </span>
             </a>
 
-            {/* Social Icons — Desktop */}
-            <div className="hidden md:flex items-center gap-2 mr-2">
+            {/* Social Icons — Desktop + Mobile (visible en barra) */}
+            <div className="flex items-center gap-1.5 sm:gap-2 mr-1 sm:mr-2 md:mr-2">
               {[
                 { href: content.studio.whatsappLink, icon: <WhatsAppIcon />, label: 'WhatsApp' },
                 { href: content.studio.instagram, icon: <Instagram size={15} />, label: 'Instagram' },
@@ -85,7 +85,7 @@ export default function Header() {
                   target={s.href.startsWith('mailto') ? undefined : '_blank'}
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200"
+                  className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center transition-all duration-200"
                   style={{
                     border: '1px solid rgba(191,161,90,0.25)',
                     background: 'rgba(191,161,90,0.05)',
@@ -156,38 +156,6 @@ export default function Header() {
                   {item.label}
                 </motion.button>
               ))}
-              {/* Social icons in mobile menu */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                className="flex items-center justify-center gap-3 py-4 border-b border-[rgba(255,255,255,0.05)]"
-              >
-                {[
-                  { href: content.studio.whatsappLink, icon: <WhatsAppIcon />, label: 'WhatsApp' },
-                  { href: content.studio.instagram, icon: <Instagram size={17} />, label: 'Instagram' },
-                  { href: content.studio.facebook, icon: <Facebook size={17} />, label: 'Facebook' },
-                  { href: `mailto:${content.studio.email}`, icon: <Mail size={17} />, label: 'Email' },
-                ].map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target={s.href.startsWith('mailto') ? undefined : '_blank'}
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    className="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-200"
-                    style={{
-                      border: '1px solid rgba(191,161,90,0.3)',
-                      background: 'rgba(191,161,90,0.08)',
-                      color: '#bfa15a',
-                    }}
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {s.icon}
-                  </a>
-                ))}
-              </motion.div>
-
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
