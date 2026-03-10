@@ -117,7 +117,7 @@ function VideoCard({ src, label, index }: { src: string; label: string; index: n
 // Video del interior del estudio
 const STUDIO_VIDEOS = [
   {
-    src: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258168_1f7ba73f.mp4',
+    src: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258056_81aa632e.mp4',
     label: 'Interior del Estudio',
   },
 ];
