@@ -117,7 +117,7 @@ function VideoCard({ src, label, index }: { src: string; label: string; index: n
 // Video del interior del estudio
 const STUDIO_VIDEOS = [
   {
-    src: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258050_eeadba9c.mp4',
+    src: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258168_1f7ba73f.mp4',
     label: 'Interior del Estudio',
   },
 ];
@@ -190,31 +190,10 @@ export default function StudioSection() {
         </div>
 
         {/* Video del interior */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 mb-10">
+        <div className="mb-10">
           {STUDIO_VIDEOS.map((video, i) => (
             <VideoCard key={video.src} src={video.src} label={video.label} index={i} />
           ))}
-          {/* Segunda foto del interior si hay */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.6, delay: 0.12 }}
-            className="relative overflow-hidden rounded-xl"
-            style={{ border: '1px solid rgba(191,161,90,0.12)' }}
-          >
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258055_2f8e5c7e.jpg"
-              alt="Interior del estudio Abraham Tattoo CR"
-              className="w-full h-64 sm:h-72 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.8)] via-[rgba(0,0,0,0.1)] to-transparent opacity-60" />
-            <div className="absolute bottom-0 left-0 right-0 p-5">
-              <span className="text-base font-semibold text-[#f0ede8]" style={{ fontFamily: 'Playfair Display, serif' }}>
-                Ambiente del Estudio
-              </span>
-            </div>
-          </motion.div>
         </div>
 
         {/* Location CTA */}
