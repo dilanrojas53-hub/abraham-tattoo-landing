@@ -12,6 +12,7 @@ import StatsSection from '../components/StatsSection';
 import ArtistSection from '../components/ArtistSection';
 import GallerySection from '../components/GallerySection';
 import BeforeAfterSection from '../components/BeforeAfterSection';
+import GiftCardSection from '../components/GiftCardSection';
 import StudioSection from '../components/StudioSection';
 import PoliciesSection from '../components/PoliciesSection';
 import ContactSection from '../components/ContactSection';
@@ -27,6 +28,7 @@ export default function Home() {
         <ArtistSection />
         <GallerySection />
         <BeforeAfterSection />
+        <GiftCardSection />
         <StudioSection />
         <PoliciesSection />
         <ContactSection />

@@ -52,6 +52,14 @@ const COVER_PAIRS: CoverPair[] = [
     title: 'Corazón en Tobillo',
     description: 'De simple a colorido con detalles únicos',
   },
+  {
+    before: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258062_e008e464.jpg',
+    after: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258063_e48f07aa.jpg',
+    beforeAlt: 'Flor mandala boceto en muñeca - Antes',
+    afterAlt: 'Flor mandala full color en muñeca - Después',
+    title: 'Flor Mandala en Muñeca',
+    description: 'Boceto transformado en color vibrante',
+  },
 ];
 
 function CompareSlider({ pair }: { pair: CoverPair }) {
@@ -270,7 +278,7 @@ export default function BeforeAfterSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4"
+          className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-3 lg:grid-cols-5"
         >
           {COVER_PAIRS.map((pair, index) => (
             <motion.div

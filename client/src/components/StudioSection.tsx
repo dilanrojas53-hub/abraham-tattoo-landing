@@ -1,15 +1,19 @@
 /*
  * StudioSection - Abraham Tattoo CR
- * Design: Dark section, 2-3 studio photos side by side desktop / stacked mobile
- * Gold labels, lightbox on click
+ * Design: Dark Luxury / Neo-Gothic Premium
+ * Sección del estudio: fotos + videos del interior
+ * Gold labels, lightbox en fotos, video inline con controls
  */
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MapPin } from 'lucide-react';
+import { X, MapPin, Play } from 'lucide-react';
 import content from '../content.json';
 
-function StudioLightbox({ photo, onClose }: { photo: typeof content.studio_photos.photos[0]; onClose: () => void }) {
+type Photo = { url: string; alt: string; label: string; type?: string };
+type Video = { url: string; label: string; poster?: string };
+
+function StudioLightbox({ photo, onClose }: { photo: Photo; onClose: () => void }) {
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
     document.addEventListener('keydown', handleKey);
@@ -56,13 +60,74 @@ function StudioLightbox({ photo, onClose }: { photo: typeof content.studio_photo
   );
 }
 
+function VideoCard({ video, index }: { video: Video; index: number }) {
+  const [playing, setPlaying] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.6, delay: index * 0.12 }}
+      className="relative overflow-hidden rounded-xl gold-border-glow"
+      style={{ border: '1px solid rgba(191,161,90,0.15)' }}
+    >
+      {!playing ? (
+        <div className="relative group cursor-pointer" onClick={() => setPlaying(true)}>
+          {video.poster && (
+            <img
+              src={video.poster}
+              alt={video.label}
+              className="w-full h-56 sm:h-64 lg:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          )}
+          {!video.poster && (
+            <div className="w-full h-56 sm:h-64 lg:h-72" style={{ background: '#1a1c1f' }} />
+          )}
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-[rgba(0,0,0,0.45)] group-hover:bg-[rgba(0,0,0,0.3)] transition-all duration-300" />
+          {/* Play button */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div
+              className="w-16 h-16 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+              style={{
+                background: 'linear-gradient(135deg, #bfa15a 0%, #8c7235 100%)',
+                boxShadow: '0 0 30px rgba(191,161,90,0.4)',
+              }}
+            >
+              <Play size={22} color="#0b0b0b" fill="#0b0b0b" style={{ marginLeft: 3 }} />
+            </div>
+          </div>
+          {/* Label */}
+          <div className="absolute bottom-0 left-0 right-0 p-4">
+            <span className="text-sm font-semibold text-[#f0ede8]" style={{ fontFamily: 'Playfair Display, serif' }}>
+              {video.label}
+            </span>
+          </div>
+        </div>
+      ) : (
+        <video
+          src={video.url}
+          poster={video.poster}
+          controls
+          autoPlay
+          playsInline
+          className="w-full h-56 sm:h-64 lg:h-72 object-cover bg-black"
+        />
+      )}
+    </motion.div>
+  );
+}
+
 export default function StudioSection() {
-  const [selectedPhoto, setSelectedPhoto] = useState<typeof content.studio_photos.photos[0] | null>(null);
+  const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
+  const photos: Photo[] = (content.studio_photos as any).photos || [];
+  const videos: Video[] = (content.studio_photos as any).videos || [];
 
   return (
     <section id="estudio" className="py-24 sm:py-28" style={{ background: '#0f1113' }}>
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
-        {/* Header — big bicolor title, left aligned */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -88,8 +153,8 @@ export default function StudioSection() {
         </motion.div>
 
         {/* Photos Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {content.studio_photos.photos.map((photo, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8">
+          {photos.map((photo, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 25 }}
@@ -104,22 +169,39 @@ export default function StudioSection() {
                 alt={photo.alt}
                 className="w-full h-56 sm:h-64 lg:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.75)] via-[rgba(0,0,0,0.1)] to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
-              {/* Label */}
               <div className="absolute bottom-0 left-0 right-0 p-4">
-                <span
-                  className="text-sm font-semibold text-[#f0ede8]"
-                  style={{ fontFamily: 'Playfair Display, serif' }}
-                >
+                <span className="text-sm font-semibold text-[#f0ede8]" style={{ fontFamily: 'Playfair Display, serif' }}>
                   {photo.label}
                 </span>
               </div>
-              {/* Gold border on hover */}
               <div className="absolute inset-0 border border-transparent group-hover:border-[rgba(191,161,90,0.5)] rounded-xl transition-all duration-300 pointer-events-none" />
             </motion.div>
           ))}
         </div>
+
+        {/* Videos Grid */}
+        {videos.length > 0 && (
+          <>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="flex items-center gap-3 mb-6"
+            >
+              <div className="w-6 h-0.5" style={{ background: 'rgba(191,161,90,0.4)' }} />
+              <span className="text-xs uppercase tracking-[0.25em] font-semibold" style={{ color: 'rgba(191,161,90,0.7)' }}>
+                Video del interior
+              </span>
+            </motion.div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+              {videos.map((video, index) => (
+                <VideoCard key={index} video={video} index={index} />
+              ))}
+            </div>
+          </>
+        )}
 
         {/* Location CTA */}
         <motion.div

@@ -371,6 +371,21 @@
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000257332_61294a9a.jpg",
         "alt": "Sol y luna No Matter Where con texto - Detalles Pequeños",
         "category": "Detalles Pequeños"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258059_b1fafea2.jpg",
+        "alt": "Gastly Pokémon full color con calavera Black & Grey en pierna",
+        "category": "Ilustrativo a Color"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258054_704588fa.jpg",
+        "alt": "Manga blackwork tribal en brazo completo - Black & Grey",
+        "category": "Black & Grey"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258058_29d292f6.jpg",
+        "alt": "Flor peonía blackwork con fondo negro en mano y antebrazo",
+        "category": "Black & Grey"
       }
     ]
   },
@@ -380,19 +395,34 @@
     "description": "Un espacio diseñado para tu comodidad y seguridad. Ambiente premium, higiene hospitalaria.",
     "photos": [
       {
-        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256614_184fc878.png",
-        "alt": "Exterior del estudio Abraham Tattoo CR",
-        "label": "Exterior"
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258055_46841e61.jpg",
+        "alt": "Exterior del estudio Abraham Tattoo CR de noche con letrero OPEN",
+        "label": "Exterior",
+        "type": "photo"
       },
       {
-        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256613_f6e2b97b.png",
-        "alt": "Interior del estudio Abraham Tattoo CR",
-        "label": "Interior"
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258066_3e6fec83.jpg",
+        "alt": "Abraham tatuando a una clienta en el estudio",
+        "label": "En Acción",
+        "type": "photo"
       },
       {
         "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000256610_6a30a5dc.png",
         "alt": "El artista Abraham trabajando",
-        "label": "El Artista"
+        "label": "El Artista",
+        "type": "photo"
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258056_6262e260.mp4",
+        "label": "Interior del Estudio",
+        "poster": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258055_46841e61.jpg"
+      },
+      {
+        "url": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258050_eeadba9c.mp4",
+        "label": "El Estudio en Detalle",
+        "poster": "https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258066_3e6fec83.jpg"
       }
     ]
   },
