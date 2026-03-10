@@ -1,12 +1,12 @@
 /*
  * StudioSection - Abraham Tattoo CR
  * Design: Dark Luxury / Neo-Gothic Premium
- * Rediseño: solo fotos del estudio (sin videos), más espacio, texto más grande
+ * Fotos del estudio + video del interior integrado en la grilla
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MapPin } from 'lucide-react';
+import { X, MapPin, Play } from 'lucide-react';
 import content from '../content.json';
 
 type Photo = { url: string; alt: string; label: string; type?: string };
@@ -58,6 +58,70 @@ function StudioLightbox({ photo, onClose }: { photo: Photo; onClose: () => void 
   );
 }
 
+function VideoCard({ src, label, index }: { src: string; label: string; index: number }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (playing) {
+      videoRef.current.pause();
+      setPlaying(false);
+    } else {
+      videoRef.current.play();
+      setPlaying(true);
+    }
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.6, delay: index * 0.12 }}
+      className="group relative cursor-pointer overflow-hidden rounded-xl"
+      style={{ border: '1px solid rgba(191,161,90,0.12)' }}
+      onClick={togglePlay}
+    >
+      <video
+        ref={videoRef}
+        src={src}
+        className="w-full h-64 sm:h-72 object-cover"
+        playsInline
+        loop
+        muted={false}
+        onEnded={() => setPlaying(false)}
+      />
+      {/* Play/Pause overlay */}
+      {!playing && (
+        <div className="absolute inset-0 bg-[rgba(0,0,0,0.45)] flex items-center justify-center transition-opacity duration-300 group-hover:bg-[rgba(0,0,0,0.3)]">
+          <div
+            className="w-16 h-16 rounded-full flex items-center justify-center"
+            style={{ background: 'rgba(191,161,90,0.2)', border: '2px solid rgba(191,161,90,0.7)' }}
+          >
+            <Play size={24} className="text-[#bfa15a] ml-1" />
+          </div>
+        </div>
+      )}
+      {/* Label */}
+      <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent">
+        <span className="text-base font-semibold text-[#f0ede8]" style={{ fontFamily: 'Playfair Display, serif' }}>
+          {label}
+        </span>
+      </div>
+      <div className="absolute inset-0 border border-transparent group-hover:border-[rgba(191,161,90,0.5)] rounded-xl transition-all duration-300 pointer-events-none" />
+    </motion.div>
+  );
+}
+
+// Video del interior del estudio
+const STUDIO_VIDEOS = [
+  {
+    src: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258050_eeadba9c.mp4',
+    label: 'Interior del Estudio',
+  },
+];
+
 export default function StudioSection() {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
   const photos: Photo[] = (content.studio_photos as any).photos || [];
@@ -97,7 +161,7 @@ export default function StudioSection() {
         </motion.div>
 
         {/* Photos Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 mb-6">
           {photos.map((photo, index) => (
             <motion.div
               key={index}
@@ -123,6 +187,34 @@ export default function StudioSection() {
               <div className="absolute inset-0 border border-transparent group-hover:border-[rgba(191,161,90,0.5)] rounded-xl transition-all duration-300 pointer-events-none" />
             </motion.div>
           ))}
+        </div>
+
+        {/* Video del interior */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6 mb-10">
+          {STUDIO_VIDEOS.map((video, i) => (
+            <VideoCard key={video.src} src={video.src} label={video.label} index={i} />
+          ))}
+          {/* Segunda foto del interior si hay */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.6, delay: 0.12 }}
+            className="relative overflow-hidden rounded-xl"
+            style={{ border: '1px solid rgba(191,161,90,0.12)' }}
+          >
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663241686300/HG9bFNBoVshFCi5o6NRwZp/1000258055_2f8e5c7e.jpg"
+              alt="Interior del estudio Abraham Tattoo CR"
+              className="w-full h-64 sm:h-72 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.8)] via-[rgba(0,0,0,0.1)] to-transparent opacity-60" />
+            <div className="absolute bottom-0 left-0 right-0 p-5">
+              <span className="text-base font-semibold text-[#f0ede8]" style={{ fontFamily: 'Playfair Display, serif' }}>
+                Ambiente del Estudio
+              </span>
+            </div>
+          </motion.div>
         </div>
 
         {/* Location CTA */}
